@@ -10,18 +10,18 @@ const Navbar = () => {
         <Link to="/">
           <img component={Link} to="/" src={logo} alt="logo" height="40px" />
         </Link>
-        <Container className={classes.container}>
+        <Container className={classes.container1}>
           <Link to="/">
-            <Typography className={classes.navBarItem}>Home</Typography>
+            <Typography>Home</Typography>
           </Link>
           <Link to="/about">
-            <Typography className={classes.navBarItem}>About</Typography>
+            <Typography>About</Typography>
           </Link>
           <Link to="/projects">
-            <Typography className={classes.navBarItem}>Projects</Typography>
+            <Typography>Projects</Typography>
           </Link>
           <Link to="/contact">
-            <Typography className={classes.navBarItem}>Contact</Typography>
+            <Typography>Contact</Typography>
           </Link>
         </Container>
       </AppBar>

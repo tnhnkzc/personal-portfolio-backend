@@ -6,15 +6,17 @@ export default makeStyles((theme) => ({
     margin: "10px",
     display: "flex",
     flexDirection: "row",
+    justifyContent: "space-between",
     padding: "10px 50px",
   },
   navBarItem: {
     float: "right",
   },
-  container: {
+  container1: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "right",
+    justifyContent: "flex-end",
+    alignItems: "center",
     margin: "10px",
     gap: "10px",
   },
