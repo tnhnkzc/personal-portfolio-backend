@@ -5,27 +5,32 @@ import useStyles from "./styles";
 const Navbar = () => {
   const classes = useStyles();
   return (
-    <Container>
-      <AppBar className={classes.appBar} color="inherit">
-        <Link to="/">
-          <img component={Link} to="/" src={logo} alt="logo" height="40px" />
+    <AppBar className={classes.appBar} color="inherit">
+      <Link to="/">
+        <img
+          component={Link}
+          to="/"
+          src={logo}
+          alt="logo"
+          height="40px"
+          className={classes.logo}
+        />
+      </Link>
+      <Container className={classes.linkContainer}>
+        <Link to="/" className={classes.navbarLinks}>
+          <Typography>Home</Typography>
         </Link>
-        <Container className={classes.container1}>
-          <Link to="/">
-            <Typography>Home</Typography>
-          </Link>
-          <Link to="/about">
-            <Typography>About</Typography>
-          </Link>
-          <Link to="/projects">
-            <Typography>Projects</Typography>
-          </Link>
-          <Link to="/contact">
-            <Typography>Contact</Typography>
-          </Link>
-        </Container>
-      </AppBar>
-    </Container>
+        <Link to="/about" className={classes.navbarLinks}>
+          <Typography>About</Typography>
+        </Link>
+        <Link to="/projects" className={classes.navbarLinks}>
+          <Typography>Projects</Typography>
+        </Link>
+        <Link to="/contact" className={classes.navbarLinks}>
+          <Typography>Contact</Typography>
+        </Link>
+      </Container>
+    </AppBar>
   );
 };
 
