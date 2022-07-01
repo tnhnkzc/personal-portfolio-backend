@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import competences from "./competences";
+import projects from "./projects";
 
-export default combineReducers({ competences });
+export default combineReducers({ projects });
