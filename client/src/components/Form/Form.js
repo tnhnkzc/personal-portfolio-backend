@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
+import { useNavigate } from "react-router-dom";
 import { createProject } from "../../actions/index";
 import useStyles from "./styles";
 
@@ -13,6 +14,7 @@ const Form = () => {
     selectedFile: "",
   });
   const classes = useStyles();
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -20,6 +22,8 @@ const Form = () => {
     e.preventDefault();
 
     dispatch(createProject(projectData));
+
+    navigate("/projects");
   };
 
   return (
@@ -56,14 +60,16 @@ const Form = () => {
             setProjectData({ ...projectData, tools: e.target.value })
           }
         />
-        <FileBase
-          type="file"
-          multiple={true}
-          ondone={({ base64 }) =>
-            setProjectData({ ...projectData, selectedFile: base64 })
-          }
-        />
-        <Button variant="outlined" type="submit">
+        <div>
+          <FileBase
+            type="file"
+            multiple={false}
+            onDone={({ base64 }) =>
+              setProjectData({ ...projectData, selectedFile: base64 })
+            }
+          />
+        </div>
+        <Button variant="contained" color="primary" type="submit">
           Submit
         </Button>
       </form>

@@ -4,4 +4,7 @@ export default makeStyles((theme) => ({
   container: {
     marginTop: "250px",
   },
+  addButton: {
+    float: "right",
+  },
 }));
