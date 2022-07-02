@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Grow, Grid, AppBar } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { getProjects } from "./actions/index";
@@ -15,6 +15,8 @@ function App() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
+  const [currentId, setCurrentId] = useState(null);
+
   useEffect(() => {
     dispatch(getProjects());
   }, [dispatch]);
@@ -27,9 +29,23 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route
+              path="/projects"
+              element={<Projects setCurrentId={setCurrentId} />}
+            />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/projects/createProject" element={<Form />} />
+            <Route
+              path="/projects/createProject"
+              element={
+                <Form currentId={currentId} setCurrentId={setCurrentId} />
+              }
+            />
+            <Route
+              path="/projects/editProject/:id"
+              element={
+                <Form currentId={currentId} setCurrentId={setCurrentId} />
+              }
+            />
           </Routes>
         </Container>
       </BrowserRouter>

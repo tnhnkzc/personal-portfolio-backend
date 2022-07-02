@@ -7,10 +7,18 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
+import { deleteProject } from "../../../actions/index";
+import { useDispatch } from "react-redux";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import GitHubIcon from "@material-ui/icons//GitHub";
+import { Link } from "react-router-dom";
 import useStyles from "./styles";
-const Project = ({ project }) => {
+import { useNavigate } from "react-router-dom";
+
+const Project = ({ project, setCurrentId }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isMouseOver, setMouseOver] = useState(false);
   const classes = useStyles();
   const handleMouseEnter = () => {
@@ -36,15 +44,21 @@ const Project = ({ project }) => {
       <CardActions>
         <Button
           id="editButton"
-          onClick={() => {}}
+          onClick={() => {
+            setCurrentId(project._id);
+            navigate(`/projects/editProject/${project._id}`);
+          }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
           {!isMouseOver ? <MoreHorizIcon fontSize="medium" /> : "Edit"}
         </Button>
-        <Button onClick={() => {}}>
+        <Button onClick={() => dispatch(deleteProject(project._id))}>
           <DeleteIcon fontSize="small" />
         </Button>
+        <a className={classes.gitHub} target="_blank" href={project.gitHubRepo}>
+          <GitHubIcon />
+        </a>
       </CardActions>
     </Card>
   );

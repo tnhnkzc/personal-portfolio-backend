@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Project from "../models/projects.js";
 
 export const homePage = (req, res) => {};
@@ -22,4 +23,25 @@ export const createProject = async (req, res) => {
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
+};
+
+export const updateProject = async (req, res) => {
+  const { id: _id } = req.params;
+  const project = req.body;
+  if (!mongoose.Types.ObjectId.isValid(_id))
+    return res.status(404).send("No project with that id.");
+  const updatedProject = await Project.findByIdAndUpdate(
+    _id,
+    { ...project, _id },
+    { new: true }
+  );
+  res.json(updatedProject);
+};
+
+export const deleteProject = async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send("No project with that id.");
+
+  await Project.findByIdAndRemove(id);
 };

@@ -4,6 +4,7 @@ const projectSchema = mongoose.Schema({
   title: String,
   description: String,
   tools: String,
+  gitHubRepo: String,
   selectedFile: String,
 });
 

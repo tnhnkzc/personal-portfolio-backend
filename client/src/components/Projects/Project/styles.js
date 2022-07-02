@@ -7,4 +7,8 @@ export default makeStyles((theme) => ({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "darken",
   },
+  gitHub: {
+    textDecoration: "none",
+    color: "black",
+  },
 }));

@@ -12,13 +12,13 @@ import {
 } from "@mui/material";
 import useStyles from "./styles";
 // import Form from "../Form/Form";
-const Projects = () => {
+const Projects = ({ setCurrentId }) => {
   const projects = useSelector((state) => {
     return state.projects;
   });
   const classes = useStyles();
   return !projects.length ? (
-    <CircularProgress />
+    <CircularProgress className={classes.circularProgress} />
   ) : (
     <>
       <Container className={classes.container} container>
@@ -40,8 +40,8 @@ const Projects = () => {
           >
             {projects.map((project) => {
               return (
-                <Grid key={project._id} item xs={12} sm={4}>
-                  <Project project={project} />
+                <Grid key={project._id} item xs={12} sm={6}>
+                  <Project setCurrentId={setCurrentId} project={project} />
                 </Grid>
               );
             })}
