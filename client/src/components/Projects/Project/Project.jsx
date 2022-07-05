@@ -27,6 +27,10 @@ const Project = ({ project, setCurrentId }) => {
   const handleMouseLeave = () => {
     setMouseOver(false);
   };
+  const handleDelete = () => {
+    dispatch(deleteProject(project._id));
+    navigate.push("/projects");
+  };
   return (
     <Card>
       <CardMedia className={classes.media} image={project.selectedFile} />
@@ -53,7 +57,7 @@ const Project = ({ project, setCurrentId }) => {
         >
           {!isMouseOver ? <MoreHorizIcon fontSize="medium" /> : "Edit"}
         </Button>
-        <Button onClick={() => dispatch(deleteProject(project._id))}>
+        <Button onClick={handleDelete}>
           <DeleteIcon fontSize="small" />
         </Button>
         <a className={classes.gitHub} target="_blank" href={project.gitHubRepo}>

@@ -9,10 +9,11 @@ import About from "./components/About/About";
 import Form from "./components/Form/Form";
 import Contact from "./components/Contact/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import useStyles from "./styles";
 
 function App() {
   const dispatch = useDispatch();
-
+  const classes = useStyles();
   const [currentId, setCurrentId] = useState(null);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Container maxidth="lg">
+        <Container className={classes.homeContainer} maxidth="lg">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
