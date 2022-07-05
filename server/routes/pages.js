@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/", homePage);
 router.get("/projects", getProjects);
 router.post("/projects/createProject", createProject);
-router.patch("/projects/editProject/:_id", updateProject);
+router.patch("/projects/editProject/:id", updateProject);
 router.delete("/projects/:id", deleteProject);
 
 export default router;

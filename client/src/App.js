@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Container, Grow, Grid, AppBar } from "@mui/material";
+import { Container } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { getProjects } from "./actions/index";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
-import useStyles from "./styles";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Form from "./components/Form/Form";
@@ -12,7 +11,6 @@ import Contact from "./components/Contact/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const classes = useStyles();
   const dispatch = useDispatch();
 
   const [currentId, setCurrentId] = useState(null);
@@ -49,11 +47,6 @@ function App() {
           </Routes>
         </Container>
       </BrowserRouter>
-
-      {/*  */}
-      {/* <Container className={classes.formContainer}>
-          <Form />
-        </Container> */}
     </>
   );
 }

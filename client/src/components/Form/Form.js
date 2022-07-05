@@ -32,11 +32,11 @@ const Form = ({ currentId, setCurrentId }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (currentId === 0) {
-      dispatch(createProject(projectData));
-    } else {
+    if (currentId) {
       dispatch(updateProject(currentId, projectData));
       clear();
+    } else {
+      dispatch(createProject(projectData));
     }
     navigate("/projects");
   };
