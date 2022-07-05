@@ -21,6 +21,7 @@ const Project = ({ project, setCurrentId }) => {
   const navigate = useNavigate();
   const [isMouseOver, setMouseOver] = useState(false);
   const classes = useStyles();
+  const user = JSON.parse(localStorage.getItem("profile"));
   const handleMouseEnter = () => {
     setMouseOver(true);
   };
@@ -46,20 +47,25 @@ const Project = ({ project, setCurrentId }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button
-          id="editButton"
-          onClick={() => {
-            setCurrentId(project._id);
-            navigate(`/projects/editProject/${project._id}`);
-          }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {!isMouseOver ? <MoreHorizIcon fontSize="medium" /> : "Edit"}
-        </Button>
-        <Button onClick={handleDelete}>
-          <DeleteIcon fontSize="small" />
-        </Button>
+        {user && (
+          <Button
+            id="editButton"
+            onClick={() => {
+              setCurrentId(project._id);
+              navigate(`/projects/editProject/${project._id}`);
+            }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            {!isMouseOver ? <MoreHorizIcon fontSize="medium" /> : "Edit"}
+          </Button>
+        )}
+        {user && (
+          <Button onClick={handleDelete}>
+            <DeleteIcon fontSize="small" />
+          </Button>
+        )}
+
         <a className={classes.gitHub} target="_blank" href={project.gitHubRepo}>
           <GitHubIcon />
         </a>

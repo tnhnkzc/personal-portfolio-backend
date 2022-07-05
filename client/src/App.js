@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Form from "./components/Form/Form";
 import Contact from "./components/Contact/Contact";
+import Auth from "./components/Auth/Auth";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useStyles from "./styles";
 
@@ -27,6 +28,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/auth" element={<Auth />} />
             <Route path="/about" element={<About />} />
             <Route
               path="/projects"

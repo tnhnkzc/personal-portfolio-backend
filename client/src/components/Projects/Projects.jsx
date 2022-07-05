@@ -17,16 +17,23 @@ const Projects = ({ setCurrentId }) => {
     return state.projects;
   });
   const classes = useStyles();
+  const user = JSON.parse(localStorage.getItem("profile"));
   return !projects.length ? (
     <CircularProgress className={classes.circularProgress} />
   ) : (
     <>
       <Container className={classes.container} container>
-        <Button className={classes.addButton}>
-          <Typography component={Link} to="/projects/createProject">
-            Add a Project
-          </Typography>
-        </Button>
+        {user && (
+          <Button className={classes.addButton} variant="contained">
+            <Typography
+              component={Link}
+              to="/projects/createProject"
+              className={classes.addButtonText}
+            >
+              Add a Project
+            </Typography>
+          </Button>
+        )}
       </Container>
       <Container>
         <Grow in>

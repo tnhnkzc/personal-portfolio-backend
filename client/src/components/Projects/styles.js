@@ -7,6 +7,10 @@ export default makeStyles((theme) => ({
   addButton: {
     float: "right",
   },
+  addButtonText: {
+    textDecoration: "none",
+    color: "white",
+  },
   circularProgress: {
     marginTop: "100px",
   },

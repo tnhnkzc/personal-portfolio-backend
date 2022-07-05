@@ -9,6 +9,21 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
     padding: "10px 50px",
   },
+  logoContainer: {
+    display: "flex !important",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    gap: "10px",
+  },
+  userContainer: {
+    display: "flex !important",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    gap: "10px",
+  },
+
   linkContainer: {
     display: "flex !important",
     flexDirection: "row",
