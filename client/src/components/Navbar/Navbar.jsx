@@ -25,7 +25,13 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar className={classes.appBar} color="inherit">
+    <AppBar
+      className={classes.appBar}
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(51,0,51,1) 26%, rgba(0,0,0,1) 39%, rgba(2,0,29,1) 64%, rgba(51,0,51,1) 77%)",
+      }}
+    >
       <Container className={classes.logoContainer}>
         <Typography component={Link} to="/">
           <img

@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
-import { Container, Button } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { Container, Button, Grid } from "@material-ui/core";
 import useStyles from "./styles";
 import { GoogleLogin } from "react-google-login";
 import { gapi } from "gapi-script";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Icon from "./icon";
+import { Input } from "./Input";
 const Auth = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [isSignup, setIsSignup] = useState(false);
+
   const classes = useStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -35,28 +39,70 @@ const Auth = () => {
     console.log(error);
     console.log("Google Sign in was unsuccessful! Try again later.");
   };
+  const handleSubmit = () => {};
+  const handleChange = () => {};
+  const handleShowPassword = () => {};
+  const switchMode = () => {
+    setIsSignup((prevIsSignup) => !prevIsSignup);
+    handleShowPassword(false);
+  };
   return (
-    <Container>
-      <GoogleLogin
-        clientId="496647822264-hj4l3f3i50de649810b6fpmri1iforva.apps.googleusercontent.com"
-        render={(renderProps) => (
-          <Button
-            className={classes.googleButton}
-            color="primary"
-            onClick={renderProps.onClick}
-            disabled={renderProps.disabled}
-            variant="contained"
-            startIcon={<Icon />}
-          >
-            Google Sign In
-          </Button>
+    <form className={classes.form} onSubmit={handleSubmit}>
+      <Grid className={classes.formGrid} container spacing={2}>
+        {isSignup && (
+          <>
+            <Input
+              name="name"
+              label="Name"
+              handleChange={handleChange}
+              autoFocus
+            />
+            <Input
+              name="email"
+              label="Email Address"
+              handleChange={handleChange}
+              type="email"
+            />
+            <Input
+              name="password"
+              label="Password"
+              handleChange={handleChange}
+              type={showPassword ? "text" : "password"}
+              handleShowPassword={showPassword}
+            />
+          </>
         )}
-        buttonText="Login"
-        onSuccess={googleSuccess}
-        onFailure={googleFailure}
-        cookiePolicy={"single_host_origin"}
-      />
-    </Container>
+      </Grid>
+      <Container>
+        <GoogleLogin
+          clientId="496647822264-hj4l3f3i50de649810b6fpmri1iforva.apps.googleusercontent.com"
+          render={(renderProps) => (
+            <Button
+              className={classes.googleButton}
+              color="primary"
+              onClick={renderProps.onClick}
+              disabled={renderProps.disabled}
+              variant="contained"
+              startIcon={<Icon />}
+            >
+              Google Sign In
+            </Button>
+          )}
+          buttonText="Login"
+          onSuccess={googleSuccess}
+          onFailure={googleFailure}
+          cookiePolicy={"single_host_origin"}
+        />
+      </Container>
+      <Button type="submit" fullWidth variant="contained" color="primary">
+        {isSignup ? "Sign Up" : "Sign In"}
+      </Button>
+      <Button onClick={switchMode}>
+        {isSignup
+          ? "Already have an account? Sign In!"
+          : "Don't have an account? Sign Up!"}
+      </Button>
+    </form>
   );
 };
 

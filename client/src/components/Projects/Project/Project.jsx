@@ -35,7 +35,12 @@ const Project = ({ project, setCurrentId }) => {
   return (
     <Card>
       <CardMedia className={classes.media} image={project.selectedFile} />
-      <CardContent>
+      <CardContent
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(122,12,56,1) 0%, rgba(148,187,233,1) 100%)",
+        }}
+      >
         <Typography variant="h3" color="textPrimary">
           {project.title}
         </Typography>
@@ -46,7 +51,12 @@ const Project = ({ project, setCurrentId }) => {
           Tools: {project.tools}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(122,12,56,1) 0%, rgba(148,187,233,1) 100%)",
+        }}
+      >
         {user && (
           <Button
             id="editButton"
@@ -57,7 +67,7 @@ const Project = ({ project, setCurrentId }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            {!isMouseOver ? <MoreHorizIcon fontSize="medium" /> : "Edit"}
+            {!isMouseOver ? <MoreHorizIcon cv fontSize="medium" /> : "Edit"}
           </Button>
         )}
         {user && (

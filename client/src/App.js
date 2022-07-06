@@ -9,6 +9,7 @@ import About from "./components/About/About";
 import Form from "./components/Form/Form";
 import Contact from "./components/Contact/Contact";
 import Auth from "./components/Auth/Auth";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useStyles from "./styles";
 

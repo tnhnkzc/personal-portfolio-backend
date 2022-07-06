@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <Grow in>
       <Container component="container" className={classes.contentContainer}>
-        <Typography>Hello, I'm Tunahan.</Typography>
-        <Typography>Web developer based in France.</Typography>
+        <Typography color="white">Hello, I'm Tunahan.</Typography>
+        <Typography color="primary">Web developer based in France.</Typography>
       </Container>
     </Grow>
   );
