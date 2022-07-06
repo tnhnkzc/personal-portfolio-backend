@@ -7,10 +7,20 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Icon from "./icon";
 import { Input } from "./Input";
+import { signup, signin } from "../../actions/auth";
+
+const initialState = {
+  username: "",
+  email: "",
+  password: "",
+};
+
 const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
 
+  const [formData, setFormData] = useState(initialState);
+  console.log(formData);
   const classes = useStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -39,8 +49,18 @@ const Auth = () => {
     console.log(error);
     console.log("Google Sign in was unsuccessful! Try again later.");
   };
-  const handleSubmit = () => {};
-  const handleChange = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isSignup) {
+      dispatch(signup(formData, navigate));
+    }
+  };
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
   const handleShowPassword = () => {};
   const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
@@ -52,26 +72,26 @@ const Auth = () => {
         {isSignup && (
           <>
             <Input
-              name="name"
-              label="Name"
+              name="username"
+              label="Username"
               handleChange={handleChange}
               autoFocus
             />
-            <Input
-              name="email"
-              label="Email Address"
-              handleChange={handleChange}
-              type="email"
-            />
-            <Input
-              name="password"
-              label="Password"
-              handleChange={handleChange}
-              type={showPassword ? "text" : "password"}
-              handleShowPassword={showPassword}
-            />
           </>
         )}
+        <Input
+          name="email"
+          label="Email Address"
+          handleChange={handleChange}
+          type="email"
+        />
+        <Input
+          name="password"
+          label="Password"
+          handleChange={handleChange}
+          type={showPassword ? "text" : "password"}
+          handleShowPassword={showPassword}
+        />
       </Grid>
       <Container>
         <GoogleLogin
