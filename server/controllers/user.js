@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import User from "../models/user.js";
+import jwt from "jsonwebtoken";
 
-export const signin = async (req, res) => {
+export const signIn = async (req, res) => {
   const { email, password } = req.body;
   try {
     const existingUser = await User.findOne({ email });
@@ -24,7 +25,7 @@ export const signin = async (req, res) => {
   }
 };
 
-export const signup = async (req, res) => {
+export const signUp = async (req, res) => {
   const { email, password, username } = req.body;
   try {
     const existingUser = await User.findOne({ email });
@@ -44,5 +45,6 @@ export const signup = async (req, res) => {
     res.status(200).json({ result, token });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong." });
+    console.error(error.response.data);
   }
 };
