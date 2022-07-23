@@ -53,6 +53,8 @@ const Auth = () => {
     e.preventDefault();
     if (isSignup) {
       dispatch(signup(formData, navigate));
+    } else {
+      dispatch(signin(formData, navigate));
     }
   };
   const handleChange = (e) => {
