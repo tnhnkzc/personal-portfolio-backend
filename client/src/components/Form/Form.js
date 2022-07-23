@@ -15,6 +15,7 @@ const Form = ({ currentId, setCurrentId }) => {
     tools: "",
     gitHubRepo: "",
     selectedFile: "",
+    siteLink: "",
   });
   const classes = useStyles();
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ const Form = ({ currentId, setCurrentId }) => {
       tools: "",
       gitHubRepo: "",
       selectedFile: "",
+      siteLink: "",
     });
   };
 
@@ -94,6 +96,16 @@ const Form = ({ currentId, setCurrentId }) => {
           value={projectData.gitHubRepo}
           onChange={(e) =>
             setProjectData({ ...projectData, gitHubRepo: e.target.value })
+          }
+        />
+        <TextField
+          name="siteLink"
+          variant="outlined"
+          label="Link"
+          fullWidth
+          value={projectData.siteLink}
+          onChange={(e) =>
+            setProjectData({ ...projectData, siteLink: e.target.value })
           }
         />
         <div>

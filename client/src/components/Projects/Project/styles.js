@@ -11,4 +11,13 @@ export default makeStyles((theme) => ({
     textDecoration: "none",
     color: "black",
   },
+  siteLink: {
+    textDecoration: "none",
+    color: "black",
+  },
+  cardActions: {
+    display: "flex !important",
+    gap: "10px",
+    justifyContent: "flex-end",
+  },
 }));

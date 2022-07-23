@@ -6,6 +6,7 @@ const projectSchema = mongoose.Schema({
   tools: String,
   gitHubRepo: String,
   selectedFile: String,
+  siteLink: String,
 });
 
 const Project = mongoose.model("Project", projectSchema);

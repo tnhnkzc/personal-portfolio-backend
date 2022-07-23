@@ -11,7 +11,8 @@ import { deleteProject } from "../../../actions/index";
 import { useDispatch } from "react-redux";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import GitHubIcon from "@material-ui/icons//GitHub";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LaunchIcon from "@material-ui/icons/Launch";
 import { Link } from "react-router-dom";
 import useStyles from "./styles";
 import { useNavigate } from "react-router-dom";
@@ -52,6 +53,7 @@ const Project = ({ project, setCurrentId }) => {
         </Typography>
       </CardContent>
       <CardActions
+        className={classes.cardActions}
         style={{
           background:
             "linear-gradient(90deg, rgba(122,12,56,1) 0%, rgba(148,187,233,1) 100%)",
@@ -78,6 +80,9 @@ const Project = ({ project, setCurrentId }) => {
 
         <a className={classes.gitHub} target="_blank" href={project.gitHubRepo}>
           <GitHubIcon />
+        </a>
+        <a className={classes.siteLink} target="_blank" href={project.siteLink}>
+          <LaunchIcon />
         </a>
       </CardActions>
     </Card>
