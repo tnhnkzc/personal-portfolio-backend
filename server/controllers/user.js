@@ -1,11 +1,11 @@
-import mongoose from "mongoose";
-import User from "../models/user.js";
+import UserModal from "../models/user.js";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
 export const signIn = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const existingUser = await User.findOne({ email });
+    const existingUser = await UserModal.findOne({ email });
     if (!existingUser)
       return res.status(404).json({ message: "User doesn't exist!" });
     const isPasswordCorrect = await bcrypt.compare(
@@ -28,23 +28,21 @@ export const signIn = async (req, res) => {
 export const signUp = async (req, res) => {
   const { email, password, username } = req.body;
   try {
-    const existingUser = await User.findOne({ email });
+    const existingUser = await UserModal.findOne({ email });
     if (existingUser)
       return res.status(400).json({ message: "The user already exists!" });
     const hashedPassword = await bcrypt.hash(password, 12);
-    const result = await User.create({
+    const result = await UserModal.create({
       email,
       password: hashedPassword,
       username,
     });
-    const token = await jwt.sign(
-      { email: result.email, id: result.id },
-      "test",
-      { expiresIn: "1h" }
-    );
-    res.status(200).json({ result, token });
+    const token = jwt.sign({ email: result.email, id: result.id }, "test", {
+      expiresIn: "1h",
+    });
+    res.status(201).json({ result, token });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong." });
-    console.error(error.response.data);
+    console.log(error);
   }
 };

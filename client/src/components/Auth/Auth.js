@@ -67,7 +67,7 @@ const Auth = () => {
     handleShowPassword(false);
   };
   return (
-    <form className={classes.form} onSubmit={handleSubmit}>
+    <form className={classes.form}>
       <Grid className={classes.formGrid} container spacing={2}>
         {isSignup && (
           <>
@@ -114,7 +114,13 @@ const Auth = () => {
           cookiePolicy={"single_host_origin"}
         />
       </Container>
-      <Button type="submit" fullWidth variant="contained" color="primary">
+      <Button
+        type="submit"
+        onClick={handleSubmit}
+        fullWidth
+        variant="contained"
+        color="primary"
+      >
         {isSignup ? "Sign Up" : "Sign In"}
       </Button>
       <Button onClick={switchMode}>
