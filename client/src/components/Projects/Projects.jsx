@@ -11,7 +11,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 import useStyles from "./styles";
-// import Form from "../Form/Form";
+
 const Projects = ({ setCurrentId }) => {
   const projects = useSelector((state) => {
     return state.projects;

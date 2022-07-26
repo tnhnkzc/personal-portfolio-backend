@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+
 import pageRoutes from "./routes/pages.js";
 import userRouter from "./routes/user.js";
 

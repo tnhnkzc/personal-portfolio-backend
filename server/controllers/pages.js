@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 import Project from "../models/projects.js";
+import EmailSender from "../SendEmail.js";
 
 export const homePage = (req, res) => {};
 
 export const getProjects = async (req, res) => {
   try {
     const projects = await Project.find();
-    console.log(projects);
     res.status(200).json(projects);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -44,4 +44,17 @@ export const deleteProject = async (req, res) => {
     return res.status(404).send("No project with that id.");
 
   await Project.findByIdAndRemove(id);
+};
+
+export const emailSender = async (req, res) => {
+  try {
+    const fullName = req.body.fullName;
+    const email = req.body.email;
+    const subject = req.body.subject;
+    const message = req.body.message;
+    EmailSender(fullName, email, subject, message);
+    res.json({ msg: "Your message is successfully sent" });
+  } catch (error) {
+    res.status(404).json(error);
+  }
 };

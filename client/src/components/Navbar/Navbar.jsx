@@ -63,9 +63,6 @@ const Navbar = () => {
       </Container>
 
       <Container className={classes.linkContainer}>
-        <Button component={Link} to="/about" className={classes.navbarLinks}>
-          About
-        </Button>
         <Button component={Link} to="/projects" className={classes.navbarLinks}>
           Projects
         </Button>

@@ -5,6 +5,7 @@ import {
   createProject,
   updateProject,
   deleteProject,
+  emailSender,
 } from "../controllers/pages.js";
 
 import auth from "../middleware/auth.js";
@@ -14,6 +15,7 @@ const router = express.Router();
 router.get("/", homePage);
 router.get("/projects", getProjects);
 router.post("/projects/createProject", createProject);
+router.post("/contact", emailSender);
 router.patch("/projects/editProject/:id", updateProject);
 router.delete("/projects/:id", deleteProject);
 

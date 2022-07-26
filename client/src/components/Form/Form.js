@@ -55,7 +55,7 @@ const Form = ({ currentId, setCurrentId }) => {
   };
 
   return (
-    <Paper className={classes.container}>
+    <Paper className={classes.formContainer}>
       <form autoComplete="off" noValidate className={classes.form}>
         <Typography>{currentId ? "Edit" : "Add"} a Project</Typography>
         <TextField

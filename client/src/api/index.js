@@ -14,3 +14,14 @@ export const deleteProject = (id) => API.delete(`/projects/${id}`);
 
 export const signIn = (formData) => API.post("/auth/signin", formData);
 export const signUp = (formData) => API.post("/auth/signup", formData);
+
+export const sendEmail = (contactFormData, setSend) => {
+  try {
+    let res = API.post(`http://localhost:5000/contact`, contactFormData);
+    if (res) {
+      setSend(res.data);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};

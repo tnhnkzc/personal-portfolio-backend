@@ -21,6 +21,15 @@ export const createProject = (project) => async (dispatch) => {
   }
 };
 
+// export const sendEmail = () => async (dispatch) => {
+//   try {
+//     const { data } = await api.sendEmail();
+
+//     dispatch({ type: "SEND", payload: data });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 export const updateProject = (id, project) => async (dispatch) => {
   try {
     const { data } = await api.updateProject(id, project);
