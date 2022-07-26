@@ -48,11 +48,9 @@ export const deleteProject = async (req, res) => {
 
 export const emailSender = async (req, res) => {
   try {
-    const fullName = req.body.fullName;
-    const email = req.body.email;
-    const subject = req.body.subject;
-    const message = req.body.message;
-    EmailSender(fullName, email, subject, message);
+    const { fullName, email, subject, message } = req.body;
+
+    EmailSender({ fullName, email, subject, message });
     res.json({ msg: "Your message is successfully sent" });
   } catch (error) {
     res.status(404).json(error);

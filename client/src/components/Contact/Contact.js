@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
   Container,
   TextField,
@@ -10,6 +9,8 @@ import {
 } from "@material-ui/core";
 import useStyles from "./styles";
 import { sendEmail } from "../../api/index";
+import axios from "axios";
+
 const Contact = () => {
   const classes = useStyles();
 
@@ -25,9 +26,23 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (contactFormData) {
-      sendEmail(contactFormData, setSend);
+    if (contactFormData.email !== "" && contactFormData.message !== "") {
+      axios
+        .post("/contact", contactFormData, {
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+        .then((res) => {
+          alert("Email sent successfully!");
+        })
+        .catch((error) => {
+          {
+            console.log(error);
+          }
+        });
     }
+    console.log(send);
   };
 
   return (
@@ -86,7 +101,6 @@ const Contact = () => {
               className={classes.textArea}
               name="message"
               minRows={10}
-              fullWidth
               placeholder="How can I help you?"
               value={contactFormData.message}
               onChange={(e) =>

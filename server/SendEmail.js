@@ -2,10 +2,10 @@ import nodemailer from "nodemailer";
 
 const Email = (options) => {
   let transporter = nodemailer.createTransport({
-    service: "Hotmail",
+    service: "hotmail",
     auth: {
-      user: process.env.SEND_MAIL,
-      pass: process.env.PASSWORD,
+      user: process.env.SEND_MAIL, // email
+      pass: process.env.PASSWORD, //password
     },
   });
 
@@ -21,7 +21,7 @@ const Email = (options) => {
 const EmailSender = ({ fullName, email, subject, message }) => {
   const options = {
     from: email,
-    to: "tnhnkzc1905@hotmail.com",
+    to: process.env.SEND_TO,
     subject: `Message from ${fullName}`,
     message: message,
     html: `<p>Email: ${email}</p>

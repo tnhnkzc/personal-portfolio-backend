@@ -17,7 +17,7 @@ export const signUp = (formData) => API.post("/auth/signup", formData);
 
 export const sendEmail = (contactFormData, setSend) => {
   try {
-    let res = API.post(`http://localhost:5000/contact`, contactFormData);
+    let res = API.post(`/contact`, contactFormData);
     if (res) {
       setSend(res.data);
     }
