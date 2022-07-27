@@ -1,14 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { TextField, Button, Typography, Paper } from "@material-ui/core";
+import {
+  TextField,
+  Button,
+  Typography,
+  Paper,
+  Container,
+} from "@material-ui/core";
 import FileBase from "react-file-base64";
 import { useNavigate } from "react-router-dom";
 import { createProject } from "../../actions/index";
 import { useSelector } from "react-redux";
 import useStyles from "./styles";
 import { updateProject } from "../../actions/index";
+import WebFont from "webfontloader";
 
 const Form = ({ currentId, setCurrentId }) => {
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+      },
+    });
+  }, []);
+
   const [projectData, setProjectData] = useState({
     title: "",
     description: "",
@@ -55,78 +70,92 @@ const Form = ({ currentId, setCurrentId }) => {
   };
 
   return (
-    <Paper className={classes.formContainer}>
-      <form autoComplete="off" noValidate className={classes.form}>
-        <Typography>{currentId ? "Edit" : "Add"} a Project</Typography>
-        <TextField
-          name="title"
-          variant="outlined"
-          label="Title"
-          fullWidth
-          value={projectData.title}
-          onChange={(e) =>
-            setProjectData({ ...projectData, title: e.target.value })
-          }
-        />
-        <TextField
-          name="description"
-          variant="outlined"
-          label="Description"
-          fullWidth
-          value={projectData.description}
-          onChange={(e) =>
-            setProjectData({ ...projectData, description: e.target.value })
-          }
-        />
-        <TextField
-          name="tools"
-          variant="outlined"
-          label="Tools"
-          fullWidth
-          value={projectData.tools}
-          onChange={(e) =>
-            setProjectData({ ...projectData, tools: e.target.value })
-          }
-        />
-        <TextField
-          name="gitHubRepo"
-          variant="outlined"
-          label="GitHub"
-          fullWidth
-          value={projectData.gitHubRepo}
-          onChange={(e) =>
-            setProjectData({ ...projectData, gitHubRepo: e.target.value })
-          }
-        />
-        <TextField
-          name="siteLink"
-          variant="outlined"
-          label="Link"
-          fullWidth
-          value={projectData.siteLink}
-          onChange={(e) =>
-            setProjectData({ ...projectData, siteLink: e.target.value })
-          }
-        />
-        <div>
-          <FileBase
-            type="file"
-            multiple={false}
-            onDone={({ base64 }) =>
-              setProjectData({ ...projectData, selectedFile: base64 })
+    <Container>
+      <Typography
+        style={{ fontFamily: "Chilanka" }}
+        variant="h4"
+        className={classes.formTitle}
+      >
+        {currentId ? "Edit" : "Add"} a Project
+      </Typography>
+      <Paper className={classes.formContainer}>
+        <form autoComplete="off" noValidate className={classes.form}>
+          <TextField
+            className={classes.textField}
+            name="title"
+            variant="outlined"
+            label="Title"
+            fullWidth
+            value={projectData.title}
+            onChange={(e) =>
+              setProjectData({ ...projectData, title: e.target.value })
             }
           />
-        </div>
-        <Button
-          variant="contained"
-          color="primary"
-          type="submit"
-          onClick={handleSubmit}
-        >
-          Submit
-        </Button>
-      </form>
-    </Paper>
+          <TextField
+            className={classes.textField}
+            name="description"
+            variant="outlined"
+            label="Description"
+            fullWidth
+            value={projectData.description}
+            onChange={(e) =>
+              setProjectData({ ...projectData, description: e.target.value })
+            }
+          />
+          <TextField
+            className={classes.textField}
+            name="tools"
+            variant="outlined"
+            label="Tools"
+            fullWidth
+            value={projectData.tools}
+            onChange={(e) =>
+              setProjectData({ ...projectData, tools: e.target.value })
+            }
+          />
+          <TextField
+            className={classes.textField}
+            name="gitHubRepo"
+            variant="outlined"
+            label="GitHub"
+            fullWidth
+            value={projectData.gitHubRepo}
+            onChange={(e) =>
+              setProjectData({ ...projectData, gitHubRepo: e.target.value })
+            }
+          />
+          <TextField
+            className={classes.textField}
+            name="siteLink"
+            variant="outlined"
+            label="Link"
+            fullWidth
+            value={projectData.siteLink}
+            onChange={(e) =>
+              setProjectData({ ...projectData, siteLink: e.target.value })
+            }
+          />
+          <div className={classes.fileBase}>
+            <FileBase
+              type="file"
+              multiple={false}
+              onDone={({ base64 }) =>
+                setProjectData({ ...projectData, selectedFile: base64 })
+              }
+            />
+          </div>
+          <Button
+            style={{ fontFamily: "Chilanka" }}
+            variant="contained"
+            color="primary"
+            type="submit"
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
+        </form>
+      </Paper>
+    </Container>
   );
 };
 

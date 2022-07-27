@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Project from "./Project/Project";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 import useStyles from "./styles";
+import WebFont from "webfontloader";
 
 const Projects = ({ setCurrentId }) => {
   const projects = useSelector((state) => {
@@ -18,6 +19,15 @@ const Projects = ({ setCurrentId }) => {
   });
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem("profile"));
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+      },
+    });
+  }, []);
+
   return !projects.length ? (
     <CircularProgress className={classes.circularProgress} />
   ) : (
@@ -29,6 +39,7 @@ const Projects = ({ setCurrentId }) => {
               component={Link}
               to="/projects/createProject"
               className={classes.addButtonText}
+              style={{ fontFamily: "Droid Sans" }}
             >
               Add a Project
             </Typography>

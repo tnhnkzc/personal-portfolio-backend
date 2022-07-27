@@ -2,9 +2,14 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   formContainer: {
-    marginTop: "150px",
+    marginTop: "100px",
+    backgroundColor: "beige",
   },
-  textField: { marginBottom: "10px" },
+  form: {},
+  textField: {
+    marginBottom: "10px",
+    color: "white",
+  },
   form: {
     padding: "10px",
   },
@@ -16,5 +21,6 @@ export default makeStyles((theme) => ({
   textArea: {
     width: "250px !important",
     marginBottom: "10px",
+    backgroundColor: "beige",
   },
 }));

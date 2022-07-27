@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   CardActions,
@@ -16,6 +16,7 @@ import LaunchIcon from "@material-ui/icons/Launch";
 import { Link } from "react-router-dom";
 import useStyles from "./styles";
 import { useNavigate } from "react-router-dom";
+import WebFont from "webfontloader";
 
 const Project = ({ project, setCurrentId }) => {
   const dispatch = useDispatch();
@@ -33,6 +34,15 @@ const Project = ({ project, setCurrentId }) => {
     dispatch(deleteProject(project._id));
     navigate.push("/projects");
   };
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Droid Sans", "Chilanka", "Grape Nuts"],
+      },
+    });
+  }, []);
+
   return (
     <Card>
       <CardMedia className={classes.media} image={project.selectedFile} />
@@ -42,13 +52,25 @@ const Project = ({ project, setCurrentId }) => {
             "linear-gradient(90deg, rgba(122,12,56,1) 0%, rgba(148,187,233,1) 100%)",
         }}
       >
-        <Typography variant="h3" color="textPrimary">
+        <Typography
+          style={{ fontFamily: "Chilanka" }}
+          variant="h3"
+          color="textPrimary"
+        >
           {project.title}
         </Typography>
-        <Typography variant="body2" color="textSecondary">
+        <Typography
+          style={{ fontFamily: "Droid Sans" }}
+          variant="body1"
+          color="white"
+        >
           Description: {project.description}
         </Typography>
-        <Typography variant="body2" color="textSecondary">
+        <Typography
+          style={{ fontFamily: "Droid Sans" }}
+          variant="body1"
+          color="white"
+        >
           Tools: {project.tools}
         </Typography>
       </CardContent>
@@ -73,8 +95,11 @@ const Project = ({ project, setCurrentId }) => {
           </Button>
         )}
         {user && (
-          <Button onClick={handleDelete}>
-            <DeleteIcon fontSize="small" />
+          <Button
+            onClick={handleDelete}
+            startIcon={<DeleteIcon fontSize="small" />}
+          >
+            Delete
           </Button>
         )}
 

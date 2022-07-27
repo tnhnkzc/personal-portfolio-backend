@@ -6,6 +6,7 @@ import useStyles from "./styles";
 import { useDispatch } from "react-redux";
 import { LOGOUT } from "../../constants/actionTypes";
 import decode from "jwt-decode";
+import WebFont from "webfontloader";
 
 const Navbar = () => {
   const classes = useStyles();
@@ -13,6 +14,14 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Droid Sans", "Chilanka", "KoHo"],
+      },
+    });
+  }, []);
 
   useEffect(() => {
     const token = user?.token;
@@ -63,10 +72,20 @@ const Navbar = () => {
       </Container>
 
       <Container className={classes.linkContainer}>
-        <Button component={Link} to="/projects" className={classes.navbarLinks}>
+        <Button
+          style={{ fontFamily: "Droid Sans" }}
+          component={Link}
+          to="/projects"
+          className={classes.navbarLinks}
+        >
           Projects
         </Button>
-        <Button component={Link} to="/contact" className={classes.navbarLinks}>
+        <Button
+          style={{ fontFamily: "Droid Sans" }}
+          component={Link}
+          to="/contact"
+          className={classes.navbarLinks}
+        >
           Contact
         </Button>
       </Container>
