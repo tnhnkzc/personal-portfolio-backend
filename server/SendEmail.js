@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 
+// NodeMailer
+
 const Email = (options) => {
   let transporter = nodemailer.createTransport({
     service: "hotmail",
@@ -20,14 +22,18 @@ const Email = (options) => {
 //send email
 const EmailSender = ({ fullName, email, subject, message }) => {
   const options = {
-    from: email,
+    from: `Personal Portfolio 👨‍💻 <tnhnkzc1905@hotmail.com>`,
     to: process.env.SEND_TO,
-    subject: `Message from ${fullName}`,
+    subject: "Message from Personal Portfolio",
     message: message,
-    html: `<p>Email: ${email}</p>
-    <p>Name: ${fullName}</p>
-    <p>Subject: ${subject}</p>
-    <p>Message: ${message}</p>`,
+    html: `<div>
+    <ul>
+    <li><p>Name and Surname: ${fullName}</p></li>
+    <li><p>Email: ${email}</p></li>
+    <li><p>Subject: ${subject}</p></li>
+    <li><p>Message: ${message}</p></li>
+    </ul>
+    </div>`,
   };
   Email(options);
 };

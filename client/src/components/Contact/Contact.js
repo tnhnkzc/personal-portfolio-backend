@@ -15,7 +15,6 @@ const Contact = () => {
   const classes = useStyles();
 
   const [contactFormData, setContactFormData] = useState({
-    email: "",
     fullName: "",
     subject: "",
     message: "",
@@ -26,7 +25,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (contactFormData.email !== "" && contactFormData.message !== "") {
+    if (contactFormData.message !== "") {
       axios
         .post("/contact", contactFormData, {
           headers: {
