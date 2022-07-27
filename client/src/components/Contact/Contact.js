@@ -9,39 +9,52 @@ import {
 } from "@material-ui/core";
 import useStyles from "./styles";
 import { sendEmail } from "../../api/index";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
+import CancelIcon from "@material-ui/icons/Cancel";
 
 const Contact = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [contactFormData, setContactFormData] = useState({
+    email: "",
     fullName: "",
     subject: "",
     message: "",
   });
 
-  const [send, setSend] = useState();
+  const [status, setStatus] = useState("");
+
+  const clear = () => {
+    setContactFormData({ email: "", fullName: "", subject: "", message: "" });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (contactFormData.message !== "") {
-      axios
-        .post("/contact", contactFormData, {
-          headers: {
-            "Content-type": "application/json",
-          },
-        })
-        .then((res) => {
-          alert("Email sent successfully!");
-        })
-        .catch((error) => {
-          {
-            console.log(error);
-          }
-        });
+    if (
+      contactFormData.message !== "" &&
+      contactFormData.fullName !== "" &&
+      contactFormData.subject !== ""
+    ) {
+      setStatus("success");
+      setTimeout(() => {
+        setStatus("");
+      }, 1500);
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+      dispatch(sendEmail(contactFormData));
+    } else {
+      setStatus("error");
+      setTimeout(() => {
+        setStatus("");
+      }, 2000);
+      clear();
     }
-    console.log(send);
   };
 
   return (
@@ -115,6 +128,20 @@ const Contact = () => {
           </Button>
         </form>
       </Paper>
+      {status === "success" && (
+        <Container>
+          <Alert variant="filled" severity="success">
+            Your message is successfully sent !
+          </Alert>
+        </Container>
+      )}
+      {status === "error" && (
+        <Container fullWidth>
+          <Alert variant="filled" severity="error">
+            There has been a problem ! Please try again later.
+          </Alert>
+        </Container>
+      )}
     </Container>
   );
 };
