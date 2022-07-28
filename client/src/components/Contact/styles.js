@@ -5,10 +5,9 @@ export default makeStyles((theme) => ({
     marginTop: "100px",
     backgroundColor: "beige",
   },
-  form: {},
+
   textField: {
     marginBottom: "10px",
-    color: "white",
   },
   form: {
     padding: "10px",
@@ -21,6 +20,10 @@ export default makeStyles((theme) => ({
   textArea: {
     width: "250px !important",
     marginBottom: "10px",
-    backgroundColor: "beige",
+    color: "white",
+  },
+
+  placeholder: {
+    color: "white",
   },
 }));

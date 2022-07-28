@@ -8,7 +8,8 @@ import Home from "./components/Home/Home";
 import Form from "./components/Form/Form";
 import Contact from "./components/Contact/Contact";
 import Auth from "./components/Auth/Auth";
-
+import Footer from "./components/Footer/Footer";
+import Sidebar from "./components/Sidebar/Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useStyles from "./styles";
 
@@ -26,6 +27,7 @@ function App() {
       <BrowserRouter>
         <Container className={classes.homeContainer} maxidth="lg">
           <Navbar />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/auth" element={<Auth />} />
@@ -49,6 +51,14 @@ function App() {
               }
             />
           </Routes>
+          <Sidebar />
+          <Footer />
+        </Container>
+        <Container className={classes.projectsContainer}>
+          <Projects />
+        </Container>
+        <Container className={classes.contactContainer}>
+          <Contact />
         </Container>
       </BrowserRouter>
     </>

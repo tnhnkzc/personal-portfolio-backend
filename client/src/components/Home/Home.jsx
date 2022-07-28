@@ -23,18 +23,12 @@ const Home = () => {
       <Container>
         <Container className={classes.contentContainer}>
           <Typography
+            className={classes.text}
             style={{ fontFamily: "Grape Nuts" }}
             variant="h3"
             color="beige"
           >
-            Hello, I'm Tunahan.
-          </Typography>
-          <Typography
-            variant="h3"
-            color="beige"
-            style={{ fontFamily: "Grape Nuts" }}
-          >
-            Web developer based in France.
+            Hello, I'm Tunahan. Web developer based in France.
           </Typography>
         </Container>
         <Container className={classes.aboutContainer}>
@@ -60,6 +54,7 @@ const Home = () => {
             style={{ fontFamily: "Chilanka" }}
             variant="h4"
             color="beige"
+            className={classes.text}
           >
             The Tools I Use
           </Typography>

@@ -8,7 +8,6 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     margin: "10px",
     marginTop: "150px",
-    gap: "10px",
   },
   aboutContainer: {
     display: "flex !important",
@@ -17,7 +16,6 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     margin: "10px",
     marginTop: "150px",
-    gap: "10px",
   },
   logoContainer: {
     display: "flex !important",
@@ -25,10 +23,10 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     margin: "10px",
-
-    gap: "10px",
+    gap: "15px",
   },
   text: {
     color: "beige",
+    textAlign: "center",
   },
 }));

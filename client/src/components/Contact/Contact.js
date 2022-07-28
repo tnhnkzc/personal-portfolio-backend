@@ -78,6 +78,10 @@ const Contact = () => {
         </Typography>
         <Paper className={classes.formContainer}>
           <form
+            style={{
+              background:
+                "linear-gradient(274deg, rgba(122,12,56,0.5172443977591037) 15%, rgba(148,218,233,0.458420868347339) 74%)",
+            }}
             autoComplete="off"
             noValidate
             className={classes.form}
@@ -85,6 +89,7 @@ const Contact = () => {
           >
             <TextField
               className={classes.textField}
+              labelClassName={classes.placeholder}
               name="email"
               variant="outlined"
               label="Email"
@@ -127,6 +132,11 @@ const Contact = () => {
             />
             <div>
               <TextareaAutosize
+                style={{
+                  background: "#11ffee00",
+                  color: "black",
+                  borderColor: "black",
+                }}
                 className={classes.textArea}
                 name="message"
                 minRows={10}

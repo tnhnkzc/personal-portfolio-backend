@@ -79,7 +79,15 @@ const Form = ({ currentId, setCurrentId }) => {
         {currentId ? "Edit" : "Add"} a Project
       </Typography>
       <Paper className={classes.formContainer}>
-        <form autoComplete="off" noValidate className={classes.form}>
+        <form
+          autoComplete="off"
+          noValidate
+          className={classes.form}
+          style={{
+            background:
+              "linear-gradient(274deg, rgba(122,12,56,0.5172443977591037) 15%, rgba(148,218,233,0.458420868347339) 74%)",
+          }}
+        >
           <TextField
             className={classes.textField}
             name="title"
