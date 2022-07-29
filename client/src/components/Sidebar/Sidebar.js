@@ -16,7 +16,7 @@ const Sidebar = () => {
     if (prevScrollpos > currentScrollPos) {
       document.getElementById("mainContainer").style.right = "0";
     } else {
-      document.getElementById("mainContainer").style.right = "-15px";
+      document.getElementById("mainContainer").style.right = "-40px";
     }
     prevScrollpos = currentScrollPos;
   };

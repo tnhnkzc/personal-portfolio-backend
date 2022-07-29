@@ -56,7 +56,7 @@ const Home = () => {
             color="beige"
             className={classes.text}
           >
-            The Tools I Use
+            The Programming Languages I Use
           </Typography>
         </Container>
         <Container className={classes.logoContainer}>

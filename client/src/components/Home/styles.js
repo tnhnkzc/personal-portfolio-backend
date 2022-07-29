@@ -8,6 +8,9 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     margin: "10px",
     marginTop: "150px",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "150px",
+    },
   },
   aboutContainer: {
     display: "flex !important",
