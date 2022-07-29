@@ -46,8 +46,18 @@ const Projects = ({ setCurrentId }) => {
           </Button>
         )}
       </Container>
-      <Container>
-        <Grow in>
+
+      <Grow in>
+        <Container>
+          <Container className={classes.titleContainer}>
+            <Typography
+              variant="h3"
+              className={classes.title}
+              style={{ fontFamily: "Chilanka" }}
+            >
+              My Works
+            </Typography>
+          </Container>
           <Grid
             className={classes.projectsGrid}
             container
@@ -64,8 +74,8 @@ const Projects = ({ setCurrentId }) => {
               );
             })}
           </Grid>
-        </Grow>
-      </Container>
+        </Container>
+      </Grow>
     </>
   );
 };

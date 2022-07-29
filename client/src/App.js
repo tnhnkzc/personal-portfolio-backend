@@ -27,7 +27,7 @@ function App() {
       <BrowserRouter>
         <Container className={classes.homeContainer} maxidth="lg">
           <Navbar />
-
+          <Sidebar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/auth" element={<Auth />} />
@@ -51,15 +51,17 @@ function App() {
               }
             />
           </Routes>
-          <Sidebar />
-          <Footer />
+          <Container className={classes.footerContainer}>
+            <Footer />
+          </Container>
         </Container>
-        <Container className={classes.projectsContainer}>
+
+        {/* <Container className={classes.projectsContainer}>
           <Projects />
         </Container>
         <Container className={classes.contactContainer}>
           <Contact />
-        </Container>
+        </Container> */}
       </BrowserRouter>
     </>
   );

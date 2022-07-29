@@ -4,16 +4,22 @@ export default makeStyles((theme) => ({
   mainContainer: {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "red",
     position: "fixed",
     right: "0",
     width: "auto !important",
-    height: "auto",
     borderRadius: "10px",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "150px",
+      right: "0",
+    },
   },
+
   githubLogo: {
     marginBottom: "10px",
     marginTop: "10px",
+    [theme.breakpoints.down("xs")]: {
+      textAlign: "center",
+    },
   },
   linkedinLogo: {
     marginBottom: "10px",

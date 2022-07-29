@@ -39,9 +39,22 @@ const Navbar = () => {
     setUser(null);
   };
 
+  // Hide navbar when scrolling
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-100px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
   return (
     <AppBar
       className={classes.appBar}
+      id="navbar"
       style={{
         background:
           "linear-gradient(90deg, rgba(51,0,51,1) 26%, rgba(0,0,0,1) 39%, rgba(2,0,29,1) 64%, rgba(51,0,51,1) 77%)",

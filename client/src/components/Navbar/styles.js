@@ -8,6 +8,7 @@ export default makeStyles((theme) => ({
     flexDirection: "row !important",
     justifyContent: "space-between",
     padding: "10px 50px",
+    position: "absolute",
   },
   logoContainer: {
     display: "flex !important",

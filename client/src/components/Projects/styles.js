@@ -2,8 +2,12 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   container: {
-    marginTop: "250px",
+    marginTop: "125px",
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "50px",
+    },
   },
+
   addButton: {
     float: "right",
   },
@@ -13,5 +17,13 @@ export default makeStyles((theme) => ({
   },
   circularProgress: {
     marginTop: "100px",
+  },
+  title: {
+    color: "beige",
+  },
+  titleContainer: {
+    display: "flex !important",
+    justifyContent: "center",
+    marginBottom: "25px",
   },
 }));

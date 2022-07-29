@@ -10,9 +10,21 @@ import MyPDF from "../../files/CV.pdf";
 const Sidebar = () => {
   const classes = useStyles();
 
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("mainContainer").style.right = "0";
+    } else {
+      document.getElementById("mainContainer").style.right = "-15px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
   return (
     <Grow in>
       <Container
+        id="mainContainer"
         className={classes.mainContainer}
         style={{
           background:

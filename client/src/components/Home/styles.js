@@ -24,6 +24,10 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     margin: "10px",
     gap: "15px",
+    [theme.breakpoints.down("xs")]: {
+      gap: "10px",
+      marginBottom: "150px",
+    },
   },
   text: {
     color: "beige",
