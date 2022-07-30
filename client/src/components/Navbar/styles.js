@@ -23,6 +23,19 @@ export default makeStyles((theme) => ({
     justifyContent: "flex-start",
     alignItems: "center",
     gap: "10px",
+    [theme.breakpoints.down("xs")]: {
+      width: "10px",
+    },
+  },
+  logoutButton: {
+    [theme.breakpoints.down("xs")]: {
+      width: "10px",
+    },
+  },
+  usernameContainer: {
+    [theme.breakpoints.down("xs")]: {
+      width: "10px",
+    },
   },
 
   linkContainer: {

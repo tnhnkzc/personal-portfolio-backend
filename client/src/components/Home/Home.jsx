@@ -49,49 +49,52 @@ const Home = () => {
             bootcamp in September in 2022.
           </Typography>
         </Container>
-        <Container className={classes.contentContainer}>
-          <Typography
-            style={{ fontFamily: "Chilanka" }}
-            variant="h4"
-            color="beige"
-            className={classes.text}
-          >
-            The Programming Languages I Use
-          </Typography>
-        </Container>
-        <Container className={classes.logoContainer}>
-          <Typography>
-            <img
-              src={javascript}
-              alt="javascript"
-              height="75px"
-              className={classes.logo}
-            />
-          </Typography>
-          <Typography>
-            <img
-              src={react}
-              alt="react"
-              height="75px"
-              className={classes.logo}
-            />
-          </Typography>
-          <Typography>
-            <img
-              src={nodejs}
-              alt="nodejs"
-              height="75px"
-              className={classes.logo}
-            />
-          </Typography>
-          <Typography>
-            <img
-              src={mongodb}
-              alt="mongodb"
-              height="75px"
-              className={classes.logo}
-            />
-          </Typography>
+
+        <Container className={classes.languagesContainer}>
+          <Container>
+            <Typography
+              style={{ fontFamily: "Chilanka" }}
+              variant="h4"
+              color="beige"
+              className={classes.text}
+            >
+              The Programming Languages I Use
+            </Typography>
+          </Container>
+          <Container className={classes.logoContainer}>
+            <Typography>
+              <img
+                src={javascript}
+                alt="javascript"
+                height="75px"
+                className={classes.logo}
+              />
+            </Typography>
+            <Typography>
+              <img
+                src={react}
+                alt="react"
+                height="75px"
+                className={classes.logo}
+              />
+            </Typography>
+            <Typography>
+              <img
+                src={nodejs}
+                alt="nodejs"
+                height="75px"
+                className={classes.logo}
+              />
+            </Typography>
+            <Typography>
+              <img
+                src={mongodb}
+                alt="mongodb"
+                height="75px"
+                className={classes.logo}
+              />
+            </Typography>
+          </Container>
         </Container>
       </Container>
     </Grow>

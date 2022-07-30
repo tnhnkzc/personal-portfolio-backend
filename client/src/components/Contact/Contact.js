@@ -89,7 +89,6 @@ const Contact = () => {
           >
             <TextField
               className={classes.textField}
-              labelClassName={classes.placeholder}
               name="email"
               variant="outlined"
               label="Email"

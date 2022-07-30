@@ -32,21 +32,6 @@ const Projects = ({ setCurrentId }) => {
     <CircularProgress className={classes.circularProgress} />
   ) : (
     <>
-      <Container className={classes.container} container>
-        {user && (
-          <Button className={classes.addButton} variant="contained">
-            <Typography
-              component={Link}
-              to="/projects/createProject"
-              className={classes.addButtonText}
-              style={{ fontFamily: "Droid Sans" }}
-            >
-              Add a Project
-            </Typography>
-          </Button>
-        )}
-      </Container>
-
       <Grow in>
         <Container>
           <Container className={classes.titleContainer}>
@@ -57,6 +42,20 @@ const Projects = ({ setCurrentId }) => {
             >
               My Works
             </Typography>
+            <Container className={classes.container} container>
+              {user && (
+                <Button className={classes.addButton} variant="contained">
+                  <Typography
+                    component={Link}
+                    to="/projects/createProject"
+                    className={classes.addButtonText}
+                    style={{ fontFamily: "Droid Sans" }}
+                  >
+                    Add a Project
+                  </Typography>
+                </Button>
+              )}
+            </Container>
           </Container>
           <Grid
             className={classes.projectsGrid}

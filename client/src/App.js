@@ -55,13 +55,6 @@ function App() {
             <Footer />
           </Container>
         </Container>
-
-        {/* <Container className={classes.projectsContainer}>
-          <Projects />
-        </Container>
-        <Container className={classes.contactContainer}>
-          <Contact />
-        </Container> */}
       </BrowserRouter>
     </>
   );

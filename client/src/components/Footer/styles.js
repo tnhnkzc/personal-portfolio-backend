@@ -16,12 +16,12 @@ export default makeStyles((theme) => ({
       left: "0",
       width: "100% !important",
     },
+    [theme.breakpoints.down("sm")]: { marginTop: "150px !important" },
   },
   footerTextContainer: {
     display: "flex !important",
     justifyContent: "center",
     alignItems: "center",
-    [theme.breakpoints.down("xs")]: {},
   },
   footerText: {
     color: "beige",

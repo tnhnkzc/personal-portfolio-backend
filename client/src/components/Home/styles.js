@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
     margin: "10px",
     marginTop: "150px",
     [theme.breakpoints.down("xs")]: {
-      marginTop: "150px",
+      marginTop: "100px",
     },
   },
   aboutContainer: {
@@ -19,7 +19,20 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     margin: "10px",
     marginTop: "150px",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "100px",
+    },
+    [theme.breakpoints.down("md")]: {
+      marginTop: "100px",
+    },
   },
+  languagesContainer: {
+    marginTop: "150px",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "100px",
+    },
+  },
+
   logoContainer: {
     display: "flex !important",
     flexDirection: "row",
@@ -31,6 +44,7 @@ export default makeStyles((theme) => ({
       gap: "10px",
       marginBottom: "150px",
     },
+    [theme.breakpoints.down("md")]: { marginBottom: "50px" },
   },
   text: {
     color: "beige",

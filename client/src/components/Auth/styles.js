@@ -8,6 +8,9 @@ export default makeStyles((theme) => ({
     borderRadius: "10px",
     backgroundColor: "white",
     marginTop: "250px",
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "370px",
+    },
   },
   formGrid: {
     padding: "10px",
