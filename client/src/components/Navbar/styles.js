@@ -27,30 +27,42 @@ export default makeStyles((theme) => ({
       width: "10px",
     },
   },
-  logoutButton: {
-    [theme.breakpoints.down("xs")]: {
-      width: "10px",
-    },
-  },
-  usernameContainer: {
-    [theme.breakpoints.down("xs")]: {
-      width: "10px",
+
+  mainContainer: {
+    display: "flex !important",
+    flexDirection: "row",
+    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      visibility: "hidden",
     },
   },
 
-  linkContainer: {
-    display: "flex !important",
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    margin: "10px",
-    gap: "10px",
-  },
   navbarLinks: {
     textDecoration: "none !important",
     color: "inherit !important",
   },
   logo: {
     float: "left !important",
+  },
+  hamburgerMenu: {
+    [theme.breakpoints.up("sm")]: {
+      visibility: "hidden",
+    },
+  },
+  chevronIcon: {
+    width: "50px",
+  },
+  hamburgerMenuContainer: {
+    display: "flex !important",
+    flexDirection: "column",
+  },
+  hmbrgMenuUserContainer: {
+    display: "flex !important",
+    flexDirection: "column",
+    gap: "10px",
+  },
+  hmbrgMenuLinkContainer: {
+    display: "flex !important",
+    flexDirection: "column",
   },
 }));

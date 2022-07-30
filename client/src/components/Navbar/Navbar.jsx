@@ -6,8 +6,12 @@ import {
   Button,
   Avatar,
   Toolbar,
+  IconButton,
+  SwipeableDrawer,
+  Divider,
 } from "@mui/material";
-import Hidden from "@mui/material/Hidden";
+import MenuIcon from "@material-ui/icons/Menu";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../../images/logo.png";
 import useStyles from "./styles";
@@ -22,6 +26,21 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuOpen = () => {
+    setMenuOpen((prevValue) => {
+      return !prevValue;
+    });
+  };
+  const handleCloseMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const closeMenuOnClick = () => {
+    setMenuOpen(false);
+  };
 
   useEffect(() => {
     WebFont.load({
@@ -68,8 +87,27 @@ const Navbar = () => {
               className={classes.logo}
             />
           </Typography>
-
-          <Hidden xsDown>
+          <Container className={classes.mainContainer}>
+            {user && (
+              <div className={classes.userContainer}>
+                <Avatar
+                  className={classes.usernameContainer}
+                  alt={user.result.name}
+                  src={user.result.imageURL}
+                >
+                  {user.result.username.charAt(0)}
+                </Avatar>
+                <Typography variant="h6">{user.result.name}</Typography>
+                <Button
+                  className={classes.logoutButton}
+                  color="secondary"
+                  variant="contained"
+                  onClick={logout}
+                >
+                  Log Out
+                </Button>
+              </div>
+            )}
             <Button
               style={{ fontFamily: "Droid Sans" }}
               component={Link}
@@ -86,29 +124,66 @@ const Navbar = () => {
             >
               Contact
             </Button>
-          </Hidden>
-          {user && (
-            <div className={classes.userContainer}>
-              <Avatar
-                className={classes.usernameContainer}
-                alt={user.result.name}
-                src={user.result.imageURL}
-              >
-                {user.result.username.charAt(0)}
-              </Avatar>
-              <Typography variant="h6">{user.result.name}</Typography>
-              <Button
-                className={classes.logoutButton}
-                color="secondary"
-                variant="contained"
-                onClick={logout}
-              >
-                Log Out
-              </Button>
-            </div>
-          )}
+          </Container>
+          <IconButton className={classes.hamburgerMenu}>
+            <MenuIcon onClick={handleMenuOpen} color="secondary" />
+          </IconButton>
         </Toolbar>
       </Container>
+      <SwipeableDrawer open={menuOpen} anchor="right">
+        <IconButton className={classes.chevronIcon}>
+          <ChevronRightIcon onClick={handleCloseMenu} />
+        </IconButton>
+        <Divider />
+        <Container className={classes.hamburgerMenuContainer}>
+          <Container className={classes.hmbrgMenuUserContainer}>
+            {user && (
+              <>
+                <Container className={classes.userContainer}>
+                  <Avatar
+                    className={classes.usernameContainer}
+                    alt={user.result.name}
+                    src={user.result.imageURL}
+                  >
+                    {user.result.username.charAt(0)}
+                  </Avatar>
+                  <Typography variant="h6">{user.result.name}</Typography>
+                </Container>
+                <Container>
+                  <Button
+                    className={classes.logoutButton}
+                    color="secondary"
+                    variant="contained"
+                    onClick={logout}
+                  >
+                    Log Out
+                  </Button>
+                </Container>
+              </>
+            )}
+          </Container>
+          <Container className={classes.hmbrgMenuLinkContainer}>
+            <Button
+              style={{ fontFamily: "Droid Sans" }}
+              component={Link}
+              to="/projects"
+              className={classes.navbarLinks}
+              onClick={closeMenuOnClick}
+            >
+              Projects
+            </Button>
+            <Button
+              style={{ fontFamily: "Droid Sans" }}
+              component={Link}
+              to="/contact"
+              className={classes.navbarLinks}
+              onClick={closeMenuOnClick}
+            >
+              Contact
+            </Button>
+          </Container>
+        </Container>
+      </SwipeableDrawer>
     </AppBar>
   );
 };
