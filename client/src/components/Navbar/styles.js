@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     display: "flex !important",
     flexDirection: "row !important",
     justifyContent: "space-between",
-    padding: "10px 50px",
+    padding: "10px ",
     position: "absolute",
   },
   logoContainer: {
@@ -33,7 +33,7 @@ export default makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "flex-end",
     alignItems: "center",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       visibility: "hidden",
     },
   },
@@ -64,6 +64,7 @@ export default makeStyles((theme) => ({
   },
   hamburgerMenuIcon: {
     color: "beige",
+    marginRight: "10px",
   },
   hmbrgMenuUserContainer: {
     display: "flex !important",

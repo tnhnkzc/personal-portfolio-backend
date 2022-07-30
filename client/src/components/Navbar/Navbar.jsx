@@ -8,7 +8,6 @@ import {
   Toolbar,
   IconButton,
   SwipeableDrawer,
-  Divider,
 } from "@mui/material";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -140,7 +139,6 @@ const Navbar = () => {
         onOpen={() => setMenuOpen(true)}
         onClose={() => setMenuOpen(false)}
       >
-        {" "}
         <div
           className={classes.chevronIconDiv}
           style={{

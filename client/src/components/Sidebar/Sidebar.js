@@ -4,33 +4,14 @@ import { Container, Grow, Typography } from "@mui/material";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
-import { Link } from "react-router-dom";
 import MyPDF from "../../files/CV.pdf";
 
 const Sidebar = () => {
   const classes = useStyles();
 
-  let prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("mainContainer").style.right = "0";
-    } else {
-      document.getElementById("mainContainer").style.right = "-40px";
-    }
-    prevScrollpos = currentScrollPos;
-  };
-
   return (
     <Grow in>
-      <Container
-        id="mainContainer"
-        className={classes.mainContainer}
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(122,12,56,1) 0%, rgba(148,187,233,1) 100%)",
-        }}
-      >
+      <Container className={classes.mainContainer}>
         <Typography>
           <a target="_blank" href="https://www.github.com/tnhnkzc">
             <GitHubIcon
@@ -58,6 +39,7 @@ const Sidebar = () => {
               style={{
                 color: "beige",
               }}
+              className={classes.cvLogo}
             />
           </a>
         </Typography>
