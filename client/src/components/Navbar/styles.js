@@ -31,6 +31,7 @@ export default makeStyles((theme) => ({
   mainContainer: {
     display: "flex !important",
     flexDirection: "row",
+    justifyContent: "flex-end",
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
       visibility: "hidden",
@@ -44,6 +45,7 @@ export default makeStyles((theme) => ({
   logo: {
     float: "left !important",
   },
+  SwipeableDrawer: {},
   hamburgerMenu: {
     [theme.breakpoints.up("sm")]: {
       visibility: "hidden",
@@ -52,9 +54,16 @@ export default makeStyles((theme) => ({
   chevronIcon: {
     width: "50px",
   },
+  chevronIconDiv: {
+    width: "100%",
+  },
   hamburgerMenuContainer: {
     display: "flex !important",
     flexDirection: "column",
+    height: "100%",
+  },
+  hamburgerMenuIcon: {
+    color: "beige",
   },
   hmbrgMenuUserContainer: {
     display: "flex !important",
@@ -64,5 +73,6 @@ export default makeStyles((theme) => ({
   hmbrgMenuLinkContainer: {
     display: "flex !important",
     flexDirection: "column",
+    margin: "0",
   },
 }));

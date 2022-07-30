@@ -126,16 +126,59 @@ const Navbar = () => {
             </Button>
           </Container>
           <IconButton className={classes.hamburgerMenu}>
-            <MenuIcon onClick={handleMenuOpen} color="secondary" />
+            <MenuIcon
+              onClick={handleMenuOpen}
+              className={classes.hamburgerMenuIcon}
+            />
           </IconButton>
         </Toolbar>
       </Container>
-      <SwipeableDrawer open={menuOpen} anchor="right">
-        <IconButton className={classes.chevronIcon}>
-          <ChevronRightIcon onClick={handleCloseMenu} />
-        </IconButton>
-        <Divider />
-        <Container className={classes.hamburgerMenuContainer}>
+      <SwipeableDrawer
+        className={classes.SwipeableDrawer}
+        open={menuOpen}
+        anchor="right"
+        onOpen={() => setMenuOpen(true)}
+        onClose={() => setMenuOpen(false)}
+      >
+        {" "}
+        <div
+          className={classes.chevronIconDiv}
+          style={{
+            background:
+              "linear-gradient(274deg, rgba(122,12,56,0.5172443977591037) 15%, rgba(148,218,233,0.458420868347339) 74%)",
+          }}
+        >
+          <IconButton className={classes.chevronIcon}>
+            <ChevronRightIcon onClick={handleCloseMenu} />
+          </IconButton>
+        </div>
+        <Container
+          style={{
+            background:
+              "linear-gradient(274deg, rgba(122,12,56,0.5172443977591037) 15%, rgba(148,218,233,0.458420868347339) 74%)",
+          }}
+          className={classes.hamburgerMenuContainer}
+        >
+          <Container className={classes.hmbrgMenuLinkContainer}>
+            <Button
+              style={{ fontFamily: "Droid Sans" }}
+              component={Link}
+              to="/projects"
+              className={classes.navbarLinks}
+              onClick={closeMenuOnClick}
+            >
+              Projects
+            </Button>
+            <Button
+              style={{ fontFamily: "Droid Sans" }}
+              component={Link}
+              to="/contact"
+              className={classes.navbarLinks}
+              onClick={closeMenuOnClick}
+            >
+              Contact
+            </Button>
+          </Container>
           <Container className={classes.hmbrgMenuUserContainer}>
             {user && (
               <>
@@ -161,26 +204,6 @@ const Navbar = () => {
                 </Container>
               </>
             )}
-          </Container>
-          <Container className={classes.hmbrgMenuLinkContainer}>
-            <Button
-              style={{ fontFamily: "Droid Sans" }}
-              component={Link}
-              to="/projects"
-              className={classes.navbarLinks}
-              onClick={closeMenuOnClick}
-            >
-              Projects
-            </Button>
-            <Button
-              style={{ fontFamily: "Droid Sans" }}
-              component={Link}
-              to="/contact"
-              className={classes.navbarLinks}
-              onClick={closeMenuOnClick}
-            >
-              Contact
-            </Button>
           </Container>
         </Container>
       </SwipeableDrawer>
