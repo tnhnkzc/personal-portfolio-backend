@@ -48,27 +48,26 @@ const Project = ({ project, setCurrentId }) => {
       <CardMedia className={classes.media} image={project.selectedFile} />
       <CardContent
         style={{
-          background:
-            "linear-gradient(90deg, rgba(122,12,56,1) 0%, rgba(148,187,233,1) 100%)",
+          background: "#330033",
         }}
       >
         <Typography
           className={classes.projectTitle}
-          style={{ fontFamily: "Chilanka" }}
+          style={{ fontFamily: "Chilanka", color: "beige" }}
           variant="h3"
           color="textPrimary"
         >
           {project.title}
         </Typography>
         <Typography
-          style={{ fontFamily: "Droid Sans" }}
+          style={{ fontFamily: "Droid Sans", color: "beige" }}
           variant="body1"
           color="white"
         >
           Description: {project.description}
         </Typography>
         <Typography
-          style={{ fontFamily: "Droid Sans" }}
+          style={{ fontFamily: "Droid Sans", color: "beige" }}
           variant="body1"
           color="white"
         >
@@ -78,8 +77,7 @@ const Project = ({ project, setCurrentId }) => {
       <CardActions
         className={classes.cardActions}
         style={{
-          background:
-            "linear-gradient(90deg, rgba(122,12,56,1) 0%, rgba(148,187,233,1) 100%)",
+          background: "#330033",
         }}
       >
         {user && (
@@ -91,6 +89,7 @@ const Project = ({ project, setCurrentId }) => {
             }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            style={{ color: "beige" }}
           >
             {!isMouseOver ? <MoreHorizIcon cv fontSize="medium" /> : "Edit"}
           </Button>
@@ -99,15 +98,26 @@ const Project = ({ project, setCurrentId }) => {
           <Button
             onClick={handleDelete}
             startIcon={<DeleteIcon fontSize="small" />}
+            style={{ color: "beige" }}
           >
             Delete
           </Button>
         )}
 
-        <a className={classes.gitHub} target="_blank" href={project.gitHubRepo}>
+        <a
+          className={classes.gitHub}
+          target="_blank"
+          href={project.gitHubRepo}
+          style={{ color: "beige" }}
+        >
           <GitHubIcon />
         </a>
-        <a className={classes.siteLink} target="_blank" href={project.siteLink}>
+        <a
+          className={classes.siteLink}
+          target="_blank"
+          href={project.siteLink}
+          style={{ color: "beige" }}
+        >
           <LaunchIcon />
         </a>
       </CardActions>

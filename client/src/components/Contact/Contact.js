@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import WebFont from "webfontloader";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const classes = useStyles();
@@ -69,96 +70,112 @@ const Contact = () => {
   return (
     <Grow in>
       <Container className={classes.container}>
-        <Typography
-          style={{ fontFamily: "Chilanka" }}
-          className={classes.formTitle}
-          variant="h2"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
         >
-          Contact Me !
-        </Typography>
-        <Paper className={classes.formContainer}>
-          <form
-            style={{
-              background:
-                "linear-gradient(274deg, rgba(122,12,56,0.5172443977591037) 15%, rgba(148,218,233,0.458420868347339) 74%)",
-            }}
-            autoComplete="off"
-            noValidate
-            className={classes.form}
-            onSubmit={handleSubmit}
+          <Typography
+            style={{ fontFamily: "Chilanka" }}
+            className={classes.formTitle}
+            variant="h2"
           >
-            <TextField
-              className={classes.textField}
-              name="email"
-              variant="outlined"
-              label="Email"
-              fullWidth
-              value={contactFormData.email}
-              onChange={(e) =>
-                setContactFormData({
-                  ...contactFormData,
-                  email: e.target.value,
-                })
-              }
-            />
-            <TextField
-              className={classes.textField}
-              name="fullName"
-              variant="outlined"
-              label="Full Name"
-              fullWidth
-              value={contactFormData.fullName}
-              onChange={(e) =>
-                setContactFormData({
-                  ...contactFormData,
-                  fullName: e.target.value,
-                })
-              }
-            />
-            <TextField
-              className={classes.textField}
-              name="subject"
-              variant="outlined"
-              label="Subject"
-              fullWidth
-              value={contactFormData.subject}
-              onChange={(e) =>
-                setContactFormData({
-                  ...contactFormData,
-                  subject: e.target.value,
-                })
-              }
-            />
-            <div>
-              <TextareaAutosize
-                style={{
-                  background: "#11ffee00",
-                  color: "black",
-                  borderColor: "black",
-                }}
-                className={classes.textArea}
-                name="message"
-                minRows={10}
-                placeholder="How can I help you?"
-                value={contactFormData.message}
+            Contact Me !
+          </Typography>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+        >
+          <Paper className={classes.formContainer}>
+            <form
+              style={{
+                background:
+                  "linear-gradient(274deg, rgba(122,12,56,0.5172443977591037) 15%, rgba(148,218,233,0.458420868347339) 74%)",
+              }}
+              autoComplete="off"
+              noValidate
+              className={classes.form}
+              onSubmit={handleSubmit}
+            >
+              <TextField
+                className={classes.textField}
+                name="email"
+                variant="outlined"
+                label="Email"
+                fullWidth
+                value={contactFormData.email}
                 onChange={(e) =>
                   setContactFormData({
                     ...contactFormData,
-                    message: e.target.value,
+                    email: e.target.value,
                   })
                 }
               />
-            </div>
-            <Button
-              style={{ fontFamily: "Droid Sans" }}
-              variant="contained"
-              color="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
-          </form>
-        </Paper>
+              <TextField
+                className={classes.textField}
+                name="fullName"
+                variant="outlined"
+                label="Full Name"
+                fullWidth
+                value={contactFormData.fullName}
+                onChange={(e) =>
+                  setContactFormData({
+                    ...contactFormData,
+                    fullName: e.target.value,
+                  })
+                }
+              />
+              <TextField
+                className={classes.textField}
+                name="subject"
+                variant="outlined"
+                label="Subject"
+                fullWidth
+                value={contactFormData.subject}
+                onChange={(e) =>
+                  setContactFormData({
+                    ...contactFormData,
+                    subject: e.target.value,
+                  })
+                }
+              />
+              <div>
+                <TextareaAutosize
+                  style={{
+                    background: "#11ffee00",
+                    color: "black",
+                    borderColor: "black",
+                  }}
+                  className={classes.textArea}
+                  name="message"
+                  minRows={10}
+                  placeholder="How can I help you?"
+                  value={contactFormData.message}
+                  onChange={(e) =>
+                    setContactFormData({
+                      ...contactFormData,
+                      message: e.target.value,
+                    })
+                  }
+                />
+              </div>
+              <Button
+                style={{
+                  fontFamily: "Droid Sans",
+                  background: "#330033",
+                  color: "beige",
+                }}
+                variant="contained"
+                color="primary"
+                type="submit"
+              >
+                Submit
+              </Button>
+            </form>
+          </Paper>
+        </motion.div>
         {status === "success" && (
           <Container>
             <Alert variant="filled" severity="success">

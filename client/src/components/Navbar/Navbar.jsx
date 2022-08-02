@@ -109,8 +109,7 @@ const Navbar = () => {
         className={classes.appBar}
         id="navbar"
         style={{
-          background:
-            "linear-gradient(90deg, rgba(51,0,51,1) 26%, rgba(0,0,0,1) 39%, rgba(2,0,29,1) 64%, rgba(51,0,51,1) 77%)",
+          background: "transparent",
         }}
       >
         <Container maxWidth="md">
@@ -151,6 +150,7 @@ const Navbar = () => {
                 style={{
                   fontFamily: "Droid Sans",
                   textDecoration: `${underlineProjects ? "underline" : "none"}`,
+                  transition: "0.8s",
                 }}
                 onMouseEnter={handleMouseEnterUnderlineProjects}
                 onMouseLeave={handleMouseLeaveUnderlineProjects}
@@ -167,7 +167,7 @@ const Navbar = () => {
                 style={{
                   fontFamily: "Droid Sans",
                   textDecoration: `${underlineContact ? "underline" : "none"}`,
-                  width: `${underlineContact ? "50px" : "0"}`,
+                  transition: "0.8s",
                 }}
                 onMouseEnter={handleMouseEnterUnderlineContact}
                 onMouseLeave={handleMouseLeaveUnderlineContact}

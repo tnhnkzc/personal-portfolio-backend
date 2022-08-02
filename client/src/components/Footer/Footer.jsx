@@ -19,8 +19,7 @@ const Footer = () => {
     <Grow in>
       <Container
         style={{
-          background:
-            "linear-gradient(90deg, rgba(122,12,56,1) 0%, rgba(148,187,233,1) 100%)",
+          background: "transparent",
         }}
         className={classes.footerContainer}
       >

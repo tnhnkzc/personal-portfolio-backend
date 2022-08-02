@@ -33,7 +33,7 @@ const Sidebar = () => {
         <Container className={classes.mainContainer}>
           <motion.button
             style={{
-              backgroundColor: "#330033",
+              background: "transparent",
               border: "none",
               display: "flex",
               width: "30px",
@@ -42,6 +42,7 @@ const Sidebar = () => {
             }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0.5 }}
           >
             <Typography className={classes.githubButton}>
               <a target="_blank" href="https://www.github.com/tnhnkzc">
@@ -59,12 +60,13 @@ const Sidebar = () => {
           </motion.button>
           <motion.button
             style={{
-              backgroundColor: "#330033",
+              backgroundColor: "transparent",
               border: "none",
               display: "flex",
               width: "30px",
               height: "40px",
             }}
+            transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -84,12 +86,13 @@ const Sidebar = () => {
           </motion.button>
           <motion.button
             style={{
-              backgroundColor: "#330033",
+              backgroundColor: "transparent",
               border: "none",
               display: "flex",
               width: "30px",
               height: "40px",
             }}
+            transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
           >

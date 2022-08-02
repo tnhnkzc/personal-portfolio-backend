@@ -50,12 +50,18 @@ const Projects = ({ setCurrentId }) => {
               </Typography>
               <Container className={classes.container} container>
                 {user && (
-                  <Button className={classes.addButton} variant="contained">
+                  <Button
+                    className={classes.addButton}
+                    variant="contained"
+                    style={{
+                      background: "#330033",
+                    }}
+                  >
                     <Typography
                       component={Link}
                       to="/projects/createProject"
                       className={classes.addButtonText}
-                      style={{ fontFamily: "Droid Sans" }}
+                      style={{ fontFamily: "Droid Sans", color: "beige" }}
                     >
                       Add a Project
                     </Typography>
