@@ -12,45 +12,17 @@ import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useStyles from "./styles";
+import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
 
 function App() {
-  const dispatch = useDispatch();
   const classes = useStyles();
-  const [currentId, setCurrentId] = useState(null);
-
-  useEffect(() => {
-    dispatch(getProjects());
-  }, [dispatch]);
-
   return (
     <>
       <BrowserRouter>
         <Container className={classes.homeContainer} maxidth="lg">
           <Navbar />
           <Sidebar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/auth/signin" element={<Auth />} />
-            <Route path="/auth/signup" element={<Auth />} />
-            <Route
-              path="/projects"
-              element={<Projects setCurrentId={setCurrentId} />}
-            />
-            <Route path="/contact" element={<Contact />} />
-            <Route
-              path="/projects/createProject"
-              element={
-                <Form currentId={currentId} setCurrentId={setCurrentId} />
-              }
-            />
-            <Route
-              path="/projects/editProject/:id"
-              element={
-                <Form currentId={currentId} setCurrentId={setCurrentId} />
-              }
-            />
-          </Routes>
+          <AnimatedRoutes />
           <Container className={classes.footerContainer}>
             <Footer />
           </Container>
