@@ -32,6 +32,7 @@ export default makeStyles((theme) => ({
       width: "18px",
     },
   },
+
   linkedinLogo: {
     marginBottom: "10px",
     [theme.breakpoints.down("xs")]: {
