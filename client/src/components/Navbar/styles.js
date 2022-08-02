@@ -9,6 +9,9 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
     padding: "10px ",
     position: "absolute",
+    transitionTimingFunction: "ease-in",
+    transition: "1.2s",
+    delay: "1.2s",
   },
   logoContainer: {
     display: "flex !important",
@@ -38,8 +41,10 @@ export default makeStyles((theme) => ({
     },
   },
 
+  navbarLinksUnderline: {
+    textDecoration: "underline ",
+  },
   navbarLinks: {
-    textDecoration: "none !important",
     color: "inherit !important",
   },
   logo: {

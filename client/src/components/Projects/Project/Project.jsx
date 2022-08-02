@@ -32,7 +32,7 @@ const Project = ({ project, setCurrentId }) => {
   };
   const handleDelete = () => {
     dispatch(deleteProject(project._id));
-    navigate.push("/projects");
+    navigate("/projects");
   };
 
   useEffect(() => {

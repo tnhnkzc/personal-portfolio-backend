@@ -11,6 +11,9 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       marginTop: "150px",
     },
+    transitionTimingFunction: "ease-in",
+    transition: "1.2s",
+    animationDelay: "1.2s",
   },
   links: {
     marginTop: "150px",

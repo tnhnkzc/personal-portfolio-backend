@@ -6,6 +6,7 @@ import nodejs from "../../images/nodejs.png";
 import react from "../../images/react.png";
 import mongodb from "../../images/mongodb.png";
 import WebFont from "webfontloader";
+import { motion, useScroll } from "framer-motion";
 
 const Home = () => {
   const classes = useStyles();
