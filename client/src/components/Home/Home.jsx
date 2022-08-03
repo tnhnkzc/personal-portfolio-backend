@@ -1,16 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Typography, Grow } from "@mui/material";
 import useStyles from "./styles";
 import javascript from "../../images/javascript.png";
 import nodejs from "../../images/nodejs.png";
 import react from "../../images/react.png";
 import mongodb from "../../images/mongodb.png";
+import github from "../../images/github.png";
+import gitbash from "../../images/gitbash.png";
+import adobexd from "../../images/adobexd.png";
 import WebFont from "webfontloader";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const classes = useStyles();
 
+  const images = [javascript, nodejs, react, mongodb, github, adobexd, gitbash];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Logo change for languages.
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentImage === images.length - 1) {
+        setCurrentImage(0);
+      } else {
+        setCurrentImage(currentImage + 1);
+      }
+    }, 2000);
+    return () => clearInterval(interval);
+  });
+
+  // Font Styles
   useEffect(() => {
     WebFont.load({
       google: {
@@ -25,7 +45,7 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
         >
           <Container className={classes.contentContainer}>
             <Typography
@@ -41,7 +61,7 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
         >
           <Container className={classes.aboutContainer}>
             <Typography
@@ -65,7 +85,7 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
         >
           <Container className={classes.languagesContainer}>
             <Container>
@@ -81,32 +101,8 @@ const Home = () => {
             <Container className={classes.logoContainer}>
               <Typography>
                 <img
-                  src={javascript}
+                  src={images[currentImage]}
                   alt="javascript"
-                  height="75px"
-                  className={classes.logo}
-                />
-              </Typography>
-              <Typography>
-                <img
-                  src={react}
-                  alt="react"
-                  height="75px"
-                  className={classes.logo}
-                />
-              </Typography>
-              <Typography>
-                <img
-                  src={nodejs}
-                  alt="nodejs"
-                  height="75px"
-                  className={classes.logo}
-                />
-              </Typography>
-              <Typography>
-                <img
-                  src={mongodb}
-                  alt="mongodb"
                   height="75px"
                   className={classes.logo}
                 />

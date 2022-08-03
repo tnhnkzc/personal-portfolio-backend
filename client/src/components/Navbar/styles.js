@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    gap: "10px",
+    paddingLeft: "25px",
   },
   userContainer: {
     display: "flex !important",
@@ -45,7 +45,7 @@ export default makeStyles((theme) => ({
     textDecoration: "underline ",
   },
   navbarLinks: {
-    color: "inherit !important",
+    color: "beige !important",
   },
   logo: {
     float: "left !important",

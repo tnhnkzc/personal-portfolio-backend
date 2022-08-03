@@ -38,7 +38,7 @@ const Projects = ({ setCurrentId }) => {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
           >
             <Container className={classes.titleContainer}>
               <Typography
@@ -73,7 +73,7 @@ const Projects = ({ setCurrentId }) => {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
           >
             <Grid
               className={classes.projectsGrid}

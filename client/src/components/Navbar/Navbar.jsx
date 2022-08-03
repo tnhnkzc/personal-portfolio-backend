@@ -112,7 +112,7 @@ const Navbar = () => {
           background: "transparent",
         }}
       >
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Toolbar disableGutters>
             <Typography component={Link} to="/">
               <img
@@ -196,18 +196,19 @@ const Navbar = () => {
           <div
             className={classes.chevronIconDiv}
             style={{
-              background:
-                "linear-gradient(274deg, rgba(122,12,56,0.5172443977591037) 15%, rgba(148,218,233,0.458420868347339) 74%)",
+              background: "black",
             }}
           >
             <IconButton className={classes.chevronIcon}>
-              <ChevronRightIcon onClick={handleCloseMenu} />
+              <ChevronRightIcon
+                onClick={handleCloseMenu}
+                style={{ color: "beige" }}
+              />
             </IconButton>
           </div>
           <Container
             style={{
-              background:
-                "linear-gradient(274deg, rgba(122,12,56,0.5172443977591037) 15%, rgba(148,218,233,0.458420868347339) 74%)",
+              background: "black",
             }}
             className={classes.hamburgerMenuContainer}
           >
