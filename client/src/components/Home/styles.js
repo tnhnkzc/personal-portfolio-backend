@@ -6,8 +6,7 @@ export default makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    margin: "10px",
-    marginTop: "150px",
+    marginTop: "100px",
     [theme.breakpoints.down("xs")]: {
       marginTop: "100px",
     },

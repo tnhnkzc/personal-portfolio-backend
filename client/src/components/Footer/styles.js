@@ -2,9 +2,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   footerContainer: {
-    marginTop: "25px",
+    marginTop: "200px",
     borderRadius: "10px",
-    position: "absolute",
+    display: "block",
     left: "0",
     right: "0",
     bottom: "0",

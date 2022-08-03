@@ -26,7 +26,7 @@ const Home = () => {
       } else {
         setCurrentImage(currentImage + 1);
       }
-    }, 2000);
+    }, 1500);
     return () => clearInterval(interval);
   });
 
@@ -95,7 +95,7 @@ const Home = () => {
                 color="beige"
                 className={classes.text}
               >
-                The Programming Languages I Use
+                The Tools and The Programming Languages I Use
               </Typography>
             </Container>
             <Container className={classes.logoContainer}>

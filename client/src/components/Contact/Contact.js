@@ -86,7 +86,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
+          transition={{ delay: 1, duration: 0.8 }}
         >
           <Paper className={classes.formContainer}>
             <form

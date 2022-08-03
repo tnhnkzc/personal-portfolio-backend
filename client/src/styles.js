@@ -7,6 +7,11 @@ export default makeStyles((theme) => ({
     },
   },
   footerContainer: {
+    position: "absolute",
+    bottom: "0",
+    right: "0",
+    left: "0",
+    marginTop: "100px",
     [theme.breakpoints.down("xs")]: {
       position: "absolute",
       bottom: "0",
