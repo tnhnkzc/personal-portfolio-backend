@@ -85,7 +85,7 @@ const Form = ({ currentId, setCurrentId }) => {
           className={classes.form}
           style={{
             background:
-              "linear-gradient(274deg, rgba(122,12,56,0.5172443977591037) 15%, rgba(148,218,233,0.458420868347339) 74%)",
+              "linear-gradient(90deg, rgba(255,255,255,0.6671043417366946) 31%, rgba(201,149,35,0.30015756302521013) 54%)",
           }}
         >
           <TextField

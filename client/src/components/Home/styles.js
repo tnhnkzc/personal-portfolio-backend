@@ -3,16 +3,19 @@ import { makeStyles } from "@material-ui/core/styles";
 export default makeStyles((theme) => ({
   contentContainer: {
     display: "flex !important",
-    flexDirection: "row",
+    flexWrap: "wrap",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     marginTop: "100px",
     [theme.breakpoints.down("xs")]: {
-      marginTop: "100px",
+      marginTop: "150px",
     },
   },
+
   aboutContainer: {
     display: "flex !important",
+    flexWrap: "wrap",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
@@ -34,6 +37,7 @@ export default makeStyles((theme) => ({
 
   logoContainer: {
     display: "flex !important",
+    flexWrap: "wrap",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",

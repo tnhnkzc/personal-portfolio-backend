@@ -3,20 +3,34 @@ import { Container } from "@mui/material";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import useStyles from "./styles";
 import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
 
 function App() {
   const classes = useStyles();
+  var docWidth = document.documentElement.offsetWidth;
+
+  [].forEach.call(document.querySelectorAll("*"), function (el) {
+    if (el.offsetWidth > docWidth) {
+      console.log(el);
+    }
+  });
+
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        <Sidebar />
-        <Container className={classes.homeContainer} maxidth="lg">
-          <AnimatedRoutes />
-          <Footer className={classes.footerContainer} />
+        <Container id="home" className={classes.htmlContainer}>
+          <Navbar />
+          <Sidebar />
+          <section className={classes.homeSection}>
+            <Container className={classes.homeContainer} maxidth="lg">
+              <AnimatedRoutes />
+            </Container>
+          </section>
+          <section className={classes.footerSection}>
+            <Footer className={classes.footerContainer} />
+          </section>
         </Container>
       </BrowserRouter>
     </>

@@ -12,7 +12,6 @@ import { AnimatePresence } from "framer-motion";
 
 function AnimatedRoutes() {
   const dispatch = useDispatch();
-  const classes = useStyles();
   const [currentId, setCurrentId] = useState(null);
   const location = useLocation();
   useEffect(() => {

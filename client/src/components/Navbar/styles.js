@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 export default makeStyles((theme) => ({
   appBar: {
     borderRadius: 15,
+    flexWrap: "wrap",
     marginTop: "10px",
     display: "flex !important",
     flexDirection: "row !important",
@@ -16,6 +17,7 @@ export default makeStyles((theme) => ({
   logoContainer: {
     display: "flex !important",
     flexDirection: "row",
+    flexWrap: "wrap",
     justifyContent: "flex-start",
     alignItems: "center",
     paddingLeft: "25px",
@@ -25,6 +27,7 @@ export default makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
+    flexWrap: "wrap",
     gap: "10px",
     [theme.breakpoints.down("xs")]: {
       width: "10px",
@@ -35,6 +38,7 @@ export default makeStyles((theme) => ({
     display: "flex !important",
     flexDirection: "row",
     justifyContent: "flex-end",
+    flexWrap: "wrap",
     alignItems: "center",
     [theme.breakpoints.down("xs")]: {
       visibility: "hidden",

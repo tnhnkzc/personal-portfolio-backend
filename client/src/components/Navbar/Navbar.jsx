@@ -18,7 +18,6 @@ import { useDispatch } from "react-redux";
 import { LOGOUT } from "../../constants/actionTypes";
 import decode from "jwt-decode";
 import WebFont from "webfontloader";
-import { motion } from "framer-motion";
 
 const Navbar = () => {
   const classes = useStyles();
@@ -112,7 +111,7 @@ const Navbar = () => {
           background: "transparent",
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="md">
           <Toolbar disableGutters>
             <Typography component={Link} to="/">
               <img

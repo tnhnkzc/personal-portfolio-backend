@@ -54,7 +54,17 @@ const Home = () => {
               variant="h3"
               color="beige"
             >
-              Hello, I'm Tunahan. Web developer based in France.
+              Hello, I'm Tunahan.
+            </Typography>
+            <Typography
+              className={classes.text}
+              style={{ fontFamily: "Grape Nuts" }}
+              variant="h3"
+              color="beige"
+            >
+              A{" "}
+              <span style={{ color: "#ffcc00" }}>FullStack Web Developer </span>
+              Based in France.
             </Typography>
           </Container>
         </motion.div>

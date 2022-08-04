@@ -16,6 +16,7 @@ export default makeStyles((theme) => ({
   },
   titleContainer: {
     display: "flex !important",
+    flexWrap: "wrap",
     marginTop: "100px",
     justifyContent: "center",
     marginBottom: "25px",
