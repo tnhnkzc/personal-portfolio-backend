@@ -14,7 +14,10 @@ export default makeStyles((theme) => ({
       left: "0",
       width: "100% !important",
     },
-    [theme.breakpoints.up("sm")]: { marginTop: "150px !important" },
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "150px !important",
+      position: "absolute",
+    },
   },
   footerTextContainer: {
     display: "flex !important",

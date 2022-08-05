@@ -12,7 +12,7 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import logo from "../../images/logo.png";
+import logo12 from "../../images/logo12.png";
 import useStyles from "./styles";
 import { useDispatch } from "react-redux";
 import { LOGOUT } from "../../constants/actionTypes";
@@ -111,18 +111,19 @@ const Navbar = () => {
           background: "transparent",
         }}
       >
-        <Container maxWidth="md">
+        <Container className={classes.navbarContainer} maxWidth="md">
+          <Typography component={Link} to="/">
+            <img
+              component={Link}
+              to="/"
+              src={logo12}
+              alt="logo"
+              width="100px"
+              height="200px"
+              className={classes.logo}
+            />
+          </Typography>
           <Toolbar disableGutters>
-            <Typography component={Link} to="/">
-              <img
-                component={Link}
-                to="/"
-                src={logo}
-                alt="logo"
-                height="40px"
-                className={classes.logo}
-              />
-            </Typography>
             <Container className={classes.mainContainer}>
               {user && (
                 <div className={classes.userContainer}>

@@ -7,22 +7,6 @@ const Footer = () => {
   const classes = useStyles();
   const currentYear = new Date().getFullYear();
 
-  const [show, setShow] = useState(false);
-
-  const controlFooter = () => {
-    if (window.scrollY < 50) {
-      setShow(true);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", controlFooter);
-
-    return () => {
-      window.removeEventListener("scroll", controlFooter);
-    };
-  }, []);
-
   useEffect(() => {
     WebFont.load({
       google: {
@@ -31,7 +15,7 @@ const Footer = () => {
     });
   }, []);
 
-  return show ? (
+  return (
     <Grow in>
       <Container
         style={{
@@ -59,7 +43,7 @@ const Footer = () => {
         </footer>
       </Container>
     </Grow>
-  ) : null;
+  );
 };
 
 export default Footer;

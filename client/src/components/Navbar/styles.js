@@ -13,7 +13,9 @@ export default makeStyles((theme) => ({
     transitionTimingFunction: "ease-in",
     transition: "1.2s",
     delay: "1.2s",
+    height: "35px",
   },
+
   logoContainer: {
     display: "flex !important",
     flexDirection: "row",

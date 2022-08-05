@@ -29,15 +29,20 @@ export default makeStyles((theme) => ({
     },
   },
   languagesContainer: {
+    display: "flex !important",
+    flexDirection: "row ",
     marginTop: "150px",
     [theme.breakpoints.down("xs")]: {
       marginTop: "100px",
+      display: "flex !important",
+      flexDirection: "column ",
+      marginBottom: "100px",
     },
   },
 
   logoContainer: {
     display: "flex !important",
-    flexWrap: "wrap",
+
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
