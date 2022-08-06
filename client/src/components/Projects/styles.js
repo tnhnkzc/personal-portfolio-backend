@@ -24,4 +24,7 @@ export default makeStyles((theme) => ({
       marginTop: "150px",
     },
   },
+  projectsContainer: {
+    marginBottom: "150px",
+  },
 }));

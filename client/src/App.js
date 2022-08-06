@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container } from "@mui/material";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -23,14 +23,10 @@ function App() {
         <Container id="home" className={classes.htmlContainer}>
           <Navbar />
           <Sidebar />
-          <section className={classes.homeSection}>
-            <Container className={classes.homeContainer} maxidth="lg">
-              <AnimatedRoutes />
-            </Container>
-          </section>
-          <section className={classes.footerSection}>
-            <Footer className={classes.footerContainer} />
-          </section>
+          <Container className={classes.homeContainer} maxidth="lg">
+            <AnimatedRoutes />
+          </Container>
+          <Footer />
         </Container>
       </BrowserRouter>
     </>
