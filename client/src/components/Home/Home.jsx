@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Typography, Grow } from "@mui/material";
+import { Container, Typography, Grow, Grid } from "@mui/material";
 import useStyles from "./styles";
 import javascript from "../../images/javascript.png";
 import nodejs from "../../images/nodejs.png";
@@ -184,24 +184,106 @@ const Home = () => {
               </Typography>
             </Container>
           </Container>
-          {/* <Container className={classes.logoContainer}>
-            <Typography>
-              <img
-                src={images[currentImage]}
-                alt="javascript"
-                height="75px"
-                className={classes.logo}
-              />
-              <Typography>
-                <img
-                  src={images[currentImage]}
-                  alt="javascript"
-                  height="75px"
-                  className={classes.logo}
-                />
-              </Typography>
-            </Typography>
-          </Container> */}
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+          style={{ marginBottom: "100px" }}
+        >
+          <Container className={classes.languagesContainer}>
+            <Grid container columnSpacing={4} rowSpacing={4}>
+              <Grid item md={6} xs={12}>
+                <Container style={{ textAlign: "center" }}>
+                  <Typography
+                    style={{ fontFamily: "Chilanka" }}
+                    variant="h4"
+                    color="beige"
+                    className={classes.text}
+                  >
+                    Competences
+                  </Typography>
+                  <ul>
+                    <li>
+                      <Typography
+                        style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      >
+                        Capable of organising and prioritizing the tasks,
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      >
+                        Sense of responsibility and reliability,
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      >
+                        Autonomy,
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      >
+                        Self-taught.
+                      </Typography>
+                    </li>
+                  </ul>
+                </Container>
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <Container
+                  className={classes.softSkillsContainer}
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  <Typography
+                    style={{ fontFamily: "Chilanka" }}
+                    variant="h4"
+                    color="beige"
+                    className={classes.text}
+                  >
+                    Soft-Skills
+                  </Typography>
+                  <ul>
+                    <li>
+                      <Typography
+                        style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      >
+                        Adaptability,
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      >
+                        Communication,
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      >
+                        Work ethic,
+                      </Typography>
+                    </li>
+                    <li>
+                      <Typography
+                        style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      >
+                        Problem-solving.
+                      </Typography>
+                    </li>
+                  </ul>
+                </Container>
+              </Grid>
+            </Grid>
+          </Container>
         </motion.div>
       </Container>
     </Grow>

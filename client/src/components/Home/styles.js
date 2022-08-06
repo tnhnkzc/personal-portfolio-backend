@@ -58,4 +58,21 @@ export default makeStyles((theme) => ({
     color: "beige",
     textAlign: "center",
   },
+  softSkillsContainer: {
+    display: "flex",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "20px",
+      gap: "10px",
+    },
+  },
+  softSkillsImage: {
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+    },
+  },
+  competencesImage: {
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+    },
+  },
 }));
