@@ -106,7 +106,6 @@ const Navbar = () => {
     show && (
       <AppBar
         className={classes.appBar}
-        id="navbar"
         style={{
           background: "transparent",
         }}
