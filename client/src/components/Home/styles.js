@@ -39,6 +39,17 @@ export default makeStyles((theme) => ({
       marginBottom: "100px",
     },
   },
+  skillsContainer: {
+    display: "flex !important",
+    flexDirection: "row ",
+    marginTop: "150px",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "100px",
+      display: "flex !important",
+      flexDirection: "column ",
+      marginBottom: "100px",
+    },
+  },
 
   logoContainer: {
     display: "flex !important",

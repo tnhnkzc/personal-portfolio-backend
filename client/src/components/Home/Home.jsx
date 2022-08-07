@@ -188,10 +188,10 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.5, duration: 0.5 }}
+          transition={{ delay: 1.8, duration: 0.5 }}
           style={{ marginBottom: "100px" }}
         >
-          <Container className={classes.languagesContainer}>
+          <Container className={classes.skillsContainer}>
             <Grid container columnSpacing={4} rowSpacing={4}>
               <Grid item md={6} xs={12}>
                 <Container style={{ textAlign: "center" }}>
