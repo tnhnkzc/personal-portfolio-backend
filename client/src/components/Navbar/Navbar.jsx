@@ -8,6 +8,8 @@ import {
   Toolbar,
   IconButton,
   SwipeableDrawer,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -18,6 +20,8 @@ import { useDispatch } from "react-redux";
 import { LOGOUT } from "../../constants/actionTypes";
 import decode from "jwt-decode";
 import WebFont from "webfontloader";
+
+import BasicMenu from "../LanguageButton/LanguageButton";
 
 const Navbar = () => {
   const classes = useStyles();
@@ -144,7 +148,7 @@ const Navbar = () => {
                   </Button>
                 </div>
               )}
-
+              <BasicMenu />
               <Button
                 style={{
                   fontFamily: "Droid Sans",
@@ -160,7 +164,6 @@ const Navbar = () => {
               >
                 Projects
               </Button>
-
               <Button
                 size={underlineContact ? "large" : "medium"}
                 style={{
@@ -212,6 +215,7 @@ const Navbar = () => {
             className={classes.hamburgerMenuContainer}
           >
             <Container className={classes.hmbrgMenuLinkContainer}>
+              <BasicMenu />
               <Button
                 style={{ fontFamily: "Droid Sans" }}
                 component={Link}

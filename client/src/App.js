@@ -10,13 +10,6 @@ import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
 
 function App() {
   const classes = useStyles();
-  var docWidth = document.documentElement.offsetWidth;
-
-  [].forEach.call(document.querySelectorAll("*"), function (el) {
-    if (el.offsetWidth > docWidth) {
-      console.log(el);
-    }
-  });
 
   return (
     <>

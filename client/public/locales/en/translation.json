@@ -1,0 +1,10 @@
+{
+  "homePage": {
+    "title": "Hello, I'm ",
+    "description": {
+      "part1": "A",
+      "part2": "FullStack Web Developer",
+      "part3": "Based in France."
+    }
+  }
+}

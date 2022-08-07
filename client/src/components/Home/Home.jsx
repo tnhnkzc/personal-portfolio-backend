@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Container, Typography, Grow, Grid } from "@mui/material";
 import useStyles from "./styles";
 import javascript from "../../images/javascript.png";
@@ -69,6 +70,8 @@ const Home = () => {
     });
   }, []);
 
+  const { t, i18n } = useTranslation();
+
   return (
     <Grow in>
       <Container id="home">
@@ -84,7 +87,7 @@ const Home = () => {
               variant="h3"
               color="beige"
             >
-              Hello, I'm
+              {t("homePage.title")}
               <span style={{ color: "#ffcc00" }}> Tunahan Kuzucu.</span>
             </Typography>
             <Typography
@@ -93,9 +96,11 @@ const Home = () => {
               variant="h3"
               color="beige"
             >
-              A{" "}
-              <span style={{ color: "#ffcc00" }}>FullStack Web Developer </span>
-              Based in France.
+              {t("homePage.description.part1")}{" "}
+              <span style={{ color: "#ffcc00" }}>
+                {t("homePage.description.part2")}{" "}
+              </span>
+              {t("homePage.description.part3")}
             </Typography>
           </Container>
         </motion.div>

@@ -1,0 +1,10 @@
+{
+  "homePage": {
+    "title": "Bonjour, Je m'apelle",
+    "description": {
+      "part1": "Un",
+      "part2": "Développeur Web FullStack",
+      "part3": "Qui Habite en France."
+    }
+  }
+}
