@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import useStyles from "./styles";
 import { Container, Typography, Button } from "@mui/material";
 import WebFont from "webfontloader";
@@ -55,6 +56,8 @@ const Footer = () => {
     });
   }, []);
 
+  const { t, i18n } = useTranslation();
+
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg" style={{ textAlign: "center" }}>
@@ -62,7 +65,7 @@ const Footer = () => {
           className={classes.footerText}
           style={{ fontFamily: "Droid Sans", fontWeight: "bold" }}
         >
-          Made with ❤️ by Tunahan Kuzucu
+          {t("footer.part1")}
         </Typography>
 
         <Typography

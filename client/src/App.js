@@ -17,7 +17,6 @@ function App() {
         <Container id="home" className={classes.htmlContainer}>
           <Navbar />
           <Sidebar />
-
           <Container className={classes.homeContainer} maxidth="lg">
             <AnimatedRoutes />
           </Container>

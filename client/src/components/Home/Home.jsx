@@ -115,16 +115,14 @@ const Home = () => {
               className={classes.text}
               style={{ fontFamily: "Chilanka" }}
             >
-              A former English teacher who wanted to change his career path.
-              Born and raised in Turkey, moved to France in December in 2020.
+              {t("aboutMessage.part1")}
             </Typography>
             <Typography
               variant="h5"
               className={classes.text}
               style={{ fontFamily: "Chilanka" }}
             >
-              Started self-studying web development in late 2021 and attended a
-              bootcamp in September in 2022.
+              {t("aboutMessage.part2")}
             </Typography>
           </Container>
         </motion.div>
@@ -141,7 +139,7 @@ const Home = () => {
                 color="beige"
                 className={classes.text}
               >
-                Front-End Development
+                {t("languagesMessage.part1")}
               </Typography>
               <Typography>
                 <img
@@ -159,7 +157,7 @@ const Home = () => {
                 color="beige"
                 className={classes.text}
               >
-                Back-End Development
+                {t("languagesMessage.part2")}
               </Typography>
               <Typography>
                 <img
@@ -177,7 +175,7 @@ const Home = () => {
                 color="beige"
                 className={classes.text}
               >
-                The Necessary Tools
+                {t("languagesMessage.part3")}
               </Typography>
               <Typography>
                 <img
@@ -206,35 +204,35 @@ const Home = () => {
                     color="beige"
                     className={classes.text}
                   >
-                    Competences
+                    {t("skillsMessage.part1")}
                   </Typography>
                   <ul>
                     <li>
                       <Typography
                         style={{ color: "beige", fontFamily: "Droid Sans" }}
                       >
-                        Capable of organising and prioritizing the tasks,
+                        {t("skillsMessage.competences.part1")}
                       </Typography>
                     </li>
                     <li>
                       <Typography
                         style={{ color: "beige", fontFamily: "Droid Sans" }}
                       >
-                        Sense of responsibility and reliability,
+                        {t("skillsMessage.competences.part2")}
                       </Typography>
                     </li>
                     <li>
                       <Typography
                         style={{ color: "beige", fontFamily: "Droid Sans" }}
                       >
-                        Autonomy,
+                        {t("skillsMessage.competences.part3")}
                       </Typography>
                     </li>
                     <li>
                       <Typography
                         style={{ color: "beige", fontFamily: "Droid Sans" }}
                       >
-                        Self-taught.
+                        {t("skillsMessage.competences.part4")}
                       </Typography>
                     </li>
                   </ul>
@@ -253,35 +251,35 @@ const Home = () => {
                     color="beige"
                     className={classes.text}
                   >
-                    Soft-Skills
+                    {t("skillsMessage.part2")}
                   </Typography>
                   <ul>
                     <li>
                       <Typography
                         style={{ color: "beige", fontFamily: "Droid Sans" }}
                       >
-                        Adaptability,
+                        {t("skillsMessage.softSkills.part1")}
                       </Typography>
                     </li>
                     <li>
                       <Typography
                         style={{ color: "beige", fontFamily: "Droid Sans" }}
                       >
-                        Communication,
+                        {t("skillsMessage.softSkills.part2")}
                       </Typography>
                     </li>
                     <li>
                       <Typography
                         style={{ color: "beige", fontFamily: "Droid Sans" }}
                       >
-                        Work ethic,
+                        {t("skillsMessage.softSkills.part3")}
                       </Typography>
                     </li>
                     <li>
                       <Typography
                         style={{ color: "beige", fontFamily: "Droid Sans" }}
                       >
-                        Problem-solving.
+                        {t("skillsMessage.softSkills.part4")}
                       </Typography>
                     </li>
                   </ul>

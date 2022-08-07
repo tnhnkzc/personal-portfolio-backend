@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Container,
   AppBar,
@@ -24,6 +25,7 @@ import WebFont from "webfontloader";
 import BasicMenu from "../LanguageButton/LanguageButton";
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const classes = useStyles();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
@@ -144,11 +146,11 @@ const Navbar = () => {
                     variant="contained"
                     onClick={logout}
                   >
-                    Log Out
+                    {t("navBar.logout")}
                   </Button>
                 </div>
               )}
-              <BasicMenu />
+
               <Button
                 style={{
                   fontFamily: "Droid Sans",
@@ -162,8 +164,9 @@ const Navbar = () => {
                 className={classes.navbarLinks}
                 size={underlineProjects ? "large" : "medium"}
               >
-                Projects
+                {t("navBar.link1")}
               </Button>
+              <BasicMenu />
               <Button
                 size={underlineContact ? "large" : "medium"}
                 style={{
@@ -177,7 +180,7 @@ const Navbar = () => {
                 to="/contact"
                 className={classes.navbarLinks}
               >
-                Contact
+                {t("navBar.link2")}
               </Button>
             </Container>
             <IconButton className={classes.hamburgerMenu}>
@@ -223,7 +226,7 @@ const Navbar = () => {
                 className={classes.navbarLinks}
                 onClick={closeMenuOnClick}
               >
-                Projects
+                {t("navBar.link1")}
               </Button>
               <Button
                 style={{ fontFamily: "Droid Sans" }}
@@ -232,7 +235,7 @@ const Navbar = () => {
                 className={classes.navbarLinks}
                 onClick={closeMenuOnClick}
               >
-                Contact
+                {t("navBar.link2")}
               </Button>
             </Container>
             <Container className={classes.hmbrgMenuUserContainer}>
@@ -255,7 +258,7 @@ const Navbar = () => {
                       variant="contained"
                       onClick={logout}
                     >
-                      Log Out
+                      {t("navBar.logout")}
                     </Button>
                   </Container>
                 </>

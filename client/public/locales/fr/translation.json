@@ -1,10 +1,43 @@
 {
+  "navBar": {
+    "link1": "Projets",
+    "link2": "Contact",
+    "logout": "Déconnexion"
+  },
+  "footer": {
+    "part1": "Fait avec ❤️ par Tunahan Kuzucu"
+  },
   "homePage": {
-    "title": "Bonjour, Je m'apelle",
+    "title": "Bonjour, Je m'appelle",
     "description": {
       "part1": "Un",
       "part2": "Développeur Web FullStack",
       "part3": "Qui Habite en France."
+    }
+  },
+  "aboutMessage": {
+    "part1": "Un ancien professeur d'Anglais qui a décidé de change sa carrière. Né et élevé en Turquie, arrivé en France en Décembre 2020.",
+    "part2": "J'ai commencé à étudier moi-même le développement web fin 2021 et j'ai fait une formation de développement web en Septembre 2022."
+  },
+  "languagesMessage": {
+    "part1": "Le Développement Front-End",
+    "part2": "Le Développement Back-End",
+    "part3": "Les Outils Indispensables"
+  },
+  "skillsMessage": {
+    "part1": "Mes Compétences",
+    "part2": "Mes Soft-Skills",
+    "competences": {
+      "part1": "Capable d'organiser et de prioriser les tâches,",
+      "part2": "Sens des responsabilités et fiabilité,",
+      "part3": "Autonomie,",
+      "part4": "Auto-didacte."
+    },
+    "softSkills": {
+      "part1": "Adaptabilité,",
+      "part2": "Communication,",
+      "part3": "Conscience Professionnelle ,",
+      "part4": "À Résoudre des Problèmes."
     }
   }
 }
