@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import pageRoutes from "./routes/pages.js";
 import userRouter from "./routes/user.js";
-import "path";
+import * as path from "path";
 
 const app = express();
 
