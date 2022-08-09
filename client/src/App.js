@@ -16,8 +16,8 @@ function App() {
       <BrowserRouter>
         <Container id="home" className={classes.htmlContainer}>
           <Navbar />
-          <Sidebar />
           <Container className={classes.homeContainer} maxidth="lg">
+            <Sidebar />
             <AnimatedRoutes />
           </Container>
           <Footer />

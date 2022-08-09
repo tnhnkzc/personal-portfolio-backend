@@ -40,13 +40,9 @@ export default makeStyles((theme) => ({
     },
   },
   skillsContainer: {
-    display: "flex !important",
-    flexDirection: "row ",
     marginTop: "150px",
     [theme.breakpoints.down("xs")]: {
       marginTop: "100px",
-      display: "flex !important",
-      flexDirection: "column ",
       marginBottom: "100px",
     },
   },
@@ -68,6 +64,9 @@ export default makeStyles((theme) => ({
   text: {
     color: "beige",
     textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "24px !important",
+    },
   },
   softSkillsContainer: {
     display: "flex",

@@ -5,12 +5,16 @@ export default makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     position: "fixed",
-    right: "0",
+    left: "0",
     flexWrap: "wrap",
     width: "auto !important",
     borderRadius: "10px",
     [theme.breakpoints.down("xs")]: {
-      marginTop: "150px",
+      marginTop: "250px",
+      width: "50px !important",
+    },
+    [theme.breakpoints.up("xs")]: {
+      marginTop: "250px",
       width: "50px !important",
     },
     transitionTimingFunction: "ease-in",
