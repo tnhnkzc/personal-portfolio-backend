@@ -2,15 +2,15 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Personal Portfolio Project",
+  "engines": {
+    "npm": ">=8.12.1",
+    "node": ">=18.4.0"
+  },
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "PROD=true node index.js",
     "postinstall": "cd ./client && npm"
-  },
-  "engines": {
-    "npm": ">=8.12.1",
-    "node": ">=18.4.0"
   },
   "repository": {
     "type": "git",
