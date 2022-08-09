@@ -19,6 +19,11 @@ export default function BasicMenu() {
       name: "English",
       country_code: "gb",
     },
+    {
+      code: "tr",
+      name: "Türkçe",
+      country_code: "tr",
+    },
   ];
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);

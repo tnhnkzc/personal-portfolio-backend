@@ -21,7 +21,6 @@ import { useDispatch } from "react-redux";
 import { LOGOUT } from "../../constants/actionTypes";
 import decode from "jwt-decode";
 import WebFont from "webfontloader";
-
 import BasicMenu from "../LanguageButton/LanguageButton";
 
 const Navbar = () => {

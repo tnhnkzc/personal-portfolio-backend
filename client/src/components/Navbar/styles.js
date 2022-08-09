@@ -58,6 +58,7 @@ export default makeStyles((theme) => ({
   },
   SwipeableDrawer: {},
   hamburgerMenu: {
+    bottom: "25px",
     [theme.breakpoints.up("sm")]: {
       visibility: "hidden",
     },

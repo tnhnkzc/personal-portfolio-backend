@@ -1,0 +1,53 @@
+{
+  "navBar": {
+    "link1": "Projeler",
+    "link2": "Iletişim",
+    "logout": "Çıkış"
+  },
+  "footer": {
+    "part1": "Tunahan Kuzucu tarafından ❤️ ile yapılmıştır"
+  },
+  "homePage": {
+    "title": "Merhaba, Benim Ismim ",
+    "description": {
+      "part1": "Bir",
+      "part2": "FullStack Web Geliştiricisi.",
+      "part3": "Fransa'da yaşamaktayım."
+    }
+  },
+  "aboutMessage": {
+    "part1": "Eski bir Ingilizce öğretmeni olarak kariyerimi değiştirmek istedim. Türkiye'de doğup büyüdüm, Fransa'ya Aralık 2020'de geldim.",
+    "part2": "2021'in sonunda kendi başıma web geliştirme çalışmaya başladım ve Eylül 2022'de web geliştirme eğitimi aldım."
+  },
+  "languagesMessage": {
+    "part1": "Front-End Web Geliştirme",
+    "part2": "Back-End Web Geliştirme",
+    "part3": "Gerekli Yardımcı Uygulamalar"
+  },
+  "skillsMessage": {
+    "part1": "Benim Yetkinliklerim",
+    "part2": "Benim Soft-Yeteneklerim",
+    "competences": {
+      "part1": "Görevleri organize edebilen ve önceliklendirebilen,",
+      "part2": "Sorumluluk ve güvenilirlik duygusu,",
+      "part3": "Özerklik,",
+      "part4": "Oto-didaktik."
+    },
+    "softSkills": {
+      "part1": "Uyarlanabilirlik,",
+      "part2": "İletişim,",
+      "part3": "Mesleki Bilinç ,",
+      "part4": "Problem Çözebilme."
+    }
+  },
+  "projectsPage": {
+    "title": "Projelerim"
+  },
+  "contactPage": {
+    "title": "Bana Ulaşın !",
+    "name": "Isim - Soyisim",
+    "subject": "Konu",
+    "message": "Size nasıl yardım edebilirim ?",
+    "button": "Gönder"
+  }
+}

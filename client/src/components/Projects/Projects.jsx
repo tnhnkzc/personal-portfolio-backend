@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import Project from "./Project/Project";
 import { Link } from "react-router-dom";
 import {
@@ -29,6 +30,8 @@ const Projects = ({ setCurrentId }) => {
     });
   }, []);
 
+  const { t, i18n } = useTranslation();
+
   return !projects.length ? (
     <CircularProgress className={classes.circularProgress} />
   ) : (
@@ -46,7 +49,7 @@ const Projects = ({ setCurrentId }) => {
                 className={classes.title}
                 style={{ fontFamily: "Chilanka" }}
               >
-                My Works
+                {t("projectsPage.title")}
               </Typography>
               <Container className={classes.container} container>
                 {user && (

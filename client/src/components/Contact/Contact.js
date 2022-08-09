@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Container,
   TextField,
@@ -18,6 +19,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   const classes = useStyles();
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -80,7 +82,7 @@ const Contact = () => {
             className={classes.formTitle}
             variant="h2"
           >
-            Contact Me !
+            {t("contactPage.title")}
           </Typography>
         </motion.div>
         <motion.div
@@ -117,7 +119,7 @@ const Contact = () => {
                 className={classes.textField}
                 name="fullName"
                 variant="outlined"
-                label="Full Name"
+                label={t("contactPage.name")}
                 fullWidth
                 value={contactFormData.fullName}
                 onChange={(e) =>
@@ -131,7 +133,7 @@ const Contact = () => {
                 className={classes.textField}
                 name="subject"
                 variant="outlined"
-                label="Subject"
+                label={t("contactPage.subject")}
                 fullWidth
                 value={contactFormData.subject}
                 onChange={(e) =>
@@ -151,7 +153,7 @@ const Contact = () => {
                   className={classes.textArea}
                   name="message"
                   minRows={10}
-                  placeholder="How can I help you?"
+                  placeholder={t("contactPage.message")}
                   value={contactFormData.message}
                   onChange={(e) =>
                     setContactFormData({
@@ -171,7 +173,7 @@ const Contact = () => {
                 color="primary"
                 type="submit"
               >
-                Submit
+                {t("contactPage.button")}
               </Button>
             </form>
           </Paper>

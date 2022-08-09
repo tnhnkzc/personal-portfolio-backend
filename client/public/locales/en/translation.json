@@ -39,5 +39,15 @@
       "part3": "Work ethic,",
       "part4": "Problem-solving."
     }
+  },
+  "projectsPage": {
+    "title": "My Projects"
+  },
+  "contactPage": {
+    "title": "Contact Me !",
+    "name": "Full Name",
+    "subject": "Subject",
+    "message": "How can I help you?",
+    "button": "Send"
   }
 }

@@ -39,5 +39,15 @@
       "part3": "Conscience Professionnelle ,",
       "part4": "À Résoudre des Problèmes."
     }
+  },
+  "projectsPage": {
+    "title": "Mes Projets"
+  },
+  "contactPage": {
+    "title": "Contactez - moi !",
+    "name": "Prénom - Nom",
+    "subject": "Objet",
+    "message": "Comment puis-je vous aider ?",
+    "button": "Envoyer"
   }
 }
