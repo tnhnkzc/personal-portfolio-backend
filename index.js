@@ -25,8 +25,9 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+const url = process.env.MONGODB_URI;
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
