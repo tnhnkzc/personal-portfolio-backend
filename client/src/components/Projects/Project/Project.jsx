@@ -13,7 +13,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LaunchIcon from "@material-ui/icons/Launch";
-import { Link } from "react-router-dom";
 import useStyles from "./styles";
 import { useNavigate } from "react-router-dom";
 import WebFont from "webfontloader";
@@ -108,6 +107,7 @@ const Project = ({ project, setCurrentId }) => {
           className={classes.gitHub}
           target="_blank"
           href={project.gitHubRepo}
+          rel="noreferrer"
           style={{ color: "beige" }}
         >
           <GitHubIcon />
@@ -116,6 +116,7 @@ const Project = ({ project, setCurrentId }) => {
           className={classes.siteLink}
           target="_blank"
           href={project.siteLink}
+          rel="noreferrer"
           style={{ color: "beige" }}
         >
           <LaunchIcon />

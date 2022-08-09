@@ -30,7 +30,7 @@ const Projects = ({ setCurrentId }) => {
     });
   }, []);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return !projects.length ? (
     <CircularProgress className={classes.circularProgress} />

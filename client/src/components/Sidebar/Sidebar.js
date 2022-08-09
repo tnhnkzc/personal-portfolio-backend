@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useStyles from "./styles";
-import { Button, Container, Grow, Typography } from "@mui/material";
+import { Container, Grow, Typography } from "@mui/material";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
@@ -45,7 +45,11 @@ const Sidebar = () => {
             transition={{ duration: 0.5 }}
           >
             <Typography className={classes.githubButton}>
-              <a target="_blank" href="https://www.github.com/tnhnkzc">
+              <a
+                target="_blank"
+                href="https://www.github.com/tnhnkzc"
+                rel="noreferrer"
+              >
                 <GitHubIcon
                   className={classes.githubLogo}
                   fontSize="medium"
@@ -74,6 +78,7 @@ const Sidebar = () => {
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/tunahankuzucu/"
+                rel="noreferrer"
               >
                 <LinkedInIcon
                   className={classes.linkedinLogo}
@@ -97,7 +102,12 @@ const Sidebar = () => {
             whileTap={{ scale: 0.9 }}
           >
             <Typography>
-              <a href={MyPDF} target="_blank" download="CV.pdf">
+              <a
+                href={MyPDF}
+                target="_blank"
+                download="CV.pdf"
+                rel="noreferrer"
+              >
                 <PictureAsPdfIcon
                   style={{
                     color: "beige",

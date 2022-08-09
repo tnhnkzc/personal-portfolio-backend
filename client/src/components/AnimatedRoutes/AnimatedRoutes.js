@@ -6,7 +6,7 @@ import Home from "../Home/Home";
 import Form from "../Form/Form";
 import Contact from "../Contact/Contact";
 import Auth from "../Auth/Auth";
-import useStyles from "../../styles";
+
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 

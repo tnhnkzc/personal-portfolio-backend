@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import useStyles from "./styles";
-import { Container, Typography, Button } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import WebFont from "webfontloader";
-import ArrowUpwardRoundedIcon from "@material-ui/icons/ArrowUpwardRounded";
 
 const Footer = () => {
   const classes = useStyles();
@@ -25,28 +24,6 @@ const Footer = () => {
   //     window.removeEventListener("scroll", handleShow);
   //   };
   // });
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleVisibility = () => {
-    const currentPageY = window.scrollY;
-    if (currentPageY > 50) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleVisibility);
-
-    return () => {
-      window.removeEventListener("scroll", handleVisibility);
-    };
-  });
-
-  const scrollToTop = () => {
-    window.scroll({ top: 0, behavior: "smooth" });
-  };
 
   useEffect(() => {
     WebFont.load({
@@ -56,7 +33,7 @@ const Footer = () => {
     });
   }, []);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <footer className={classes.footer}>

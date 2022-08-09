@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "PROD=true node index.js",
+    "postinstall": "cd ./client && npm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnhnkzc/personal-portfolio.git"
+  },
+  "keywords": [
+    "Portfolio"
+  ],
+  "author": "Tunahan Kuzucu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tnhnkzc/personal-portfolio/issues"
+  },
+  "homepage": "https://github.com/tnhnkzc/personal-portfolio#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.1",
+    "nodemailer": "^6.7.7",
+    "nodemon": "^2.0.18"
+  }
+}

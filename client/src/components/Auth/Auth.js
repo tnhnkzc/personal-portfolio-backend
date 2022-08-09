@@ -63,10 +63,13 @@ const Auth = () => {
       [e.target.name]: e.target.value,
     });
   };
-  const handleShowPassword = () => {};
+  const handleShowPassword = () => {
+    setShowPassword((prevValue) => {
+      return !prevValue;
+    });
+  };
   const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
-    handleShowPassword(false);
   };
   return (
     <form className={classes.form}>
@@ -92,7 +95,7 @@ const Auth = () => {
           label="Password"
           handleChange={handleChange}
           type={showPassword ? "text" : "password"}
-          handleShowPassword={showPassword}
+          handleShowPassword={handleShowPassword}
         />
       </Grid>
       <Container>

@@ -9,8 +9,6 @@ import {
   Toolbar,
   IconButton,
   SwipeableDrawer,
-  Menu,
-  MenuItem,
 } from "@mui/material";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -24,7 +22,7 @@ import WebFont from "webfontloader";
 import BasicMenu from "../LanguageButton/LanguageButton";
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const classes = useStyles();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
