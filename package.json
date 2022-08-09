@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Personal Portfolio Project",
   "engines": {
-    "npm": ">=8.12.x",
-    "node": ">=18.4.x"
+    "npm": ">=8.x.x",
+    "node": ">=18.x.x"
   },
   "main": "index.js",
   "type": "module",
