@@ -17,10 +17,10 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use("/", pageRoutes);
 app.use("/auth", userRouter);
 
-if (process.env.PROD) {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "./client/build")));
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    req.sendFile(path.resolve(__dirname, "./client", "build", "index.html"));
   });
 }
 
