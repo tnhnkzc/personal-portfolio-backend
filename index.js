@@ -25,7 +25,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const url = process.env.MONGODB_URI;
+const url = process.env.MONGODB;
+
 mongoose
   .connect(url, {
     useNewUrlParser: true,
