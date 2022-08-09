@@ -8,6 +8,10 @@
     "start": "PROD=true node index.js",
     "postinstall": "cd ./client && npm"
   },
+  "engines": {
+    "npm": ">=8.12.1",
+    "node": ">=18.4.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tnhnkzc/personal-portfolio.git"
