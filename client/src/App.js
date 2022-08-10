@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "@mui/material";
-import NewNavbar from "./components/NewNavbar/NewNavbar";
+import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
@@ -15,7 +15,7 @@ function App() {
     <>
       <BrowserRouter>
         <Container id="home" className={classes.htmlContainer}>
-          <NewNavbar />
+          <Navbar />
           <Container className={classes.homeContainer} maxidth="lg">
             <Sidebar />
             <AnimatedRoutes />
