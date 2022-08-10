@@ -21,7 +21,7 @@ import useStyles from "./styles";
 import WebFont from "webfontloader";
 import BasicMenu from "../LanguageButton/LanguageButton";
 
-function NewNavbar() {
+function Navbar() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -276,4 +276,4 @@ function NewNavbar() {
   );
 }
 
-export default NewNavbar;
+export default Navbar;
