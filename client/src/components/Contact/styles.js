@@ -21,6 +21,9 @@ export default makeStyles((theme) => ({
     color: "beige",
     marginTop: "150px",
     textAlign: "center",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "36px !important",
+    },
   },
   textArea: {
     width: "100% !important",

@@ -22,13 +22,13 @@
   "languagesMessage": {
     "part1": "Front-End Development",
     "part2": "Back-End Development",
-    "part3": "Must Have Tools"
+    "part3": "Must Have Tools For Development"
   },
   "skillsMessage": {
     "part1": "My Competences",
     "part2": "My Soft-Skills",
     "competences": {
-      "part1": "Capable of organising and prioritizing the tasks,",
+      "part1": "Capable of prioritizing the tasks,",
       "part2": "Sense of responsibility and reliability,",
       "part3": "Autonomy,",
       "part4": "Self-taught."

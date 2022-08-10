@@ -17,12 +17,18 @@ import WebFont from "webfontloader";
 import { motion } from "framer-motion";
 
 const Home = () => {
+  // Styles
   const classes = useStyles();
 
+  // Translation
+  const { t } = useTranslation();
+
+  // Changing Images
   const frontEndImages = [javascript, html, react, css];
-  const backEndImages = [mysql, nodejs, mongodb, expressjs];
+  const backEndImages = [mysql, nodejs, mongodb];
   const toolImages = [github, adobexd, gitbash];
 
+  //Changing Images State
   const [currentFrontEndImage, setCurrentFrontEndImage] = useState(0);
   const [currentBackEndImage, setCurrentBackEndImage] = useState(0);
   const [currentToolsImage, setCurrentToolsImage] = useState(0);
@@ -38,6 +44,7 @@ const Home = () => {
     }, 1500);
     return () => clearInterval(interval);
   });
+
   // Logo change for back-end languages.
   useEffect(() => {
     const interval = setInterval(() => {
@@ -49,6 +56,7 @@ const Home = () => {
     }, 1500);
     return () => clearInterval(interval);
   });
+
   // Logo change for tools.
   useEffect(() => {
     const interval = setInterval(() => {
@@ -70,44 +78,50 @@ const Home = () => {
     });
   }, []);
 
-  const { t } = useTranslation();
-
   return (
     <Grow in>
-      <Container id="home">
+      <Container className={classes.mainContainer}>
+        {/* Entry Message Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          <Container className={classes.contentContainer}>
-            <Typography
-              className={classes.text}
-              style={{ fontFamily: "Grape Nuts" }}
-              variant="h3"
-              color="beige"
-            >
-              {t("homePage.title")}
-              <span style={{ color: "#ffcc00" }}> Tunahan Kuzucu.</span>
-            </Typography>
-            <Typography
-              className={classes.text}
-              style={{ fontFamily: "Grape Nuts" }}
-              variant="h3"
-              color="beige"
-            >
-              {t("homePage.description.part1")}{" "}
-              <span style={{ color: "#ffcc00" }}>
-                {t("homePage.description.part2")}{" "}
-              </span>
-              {t("homePage.description.part3")}
-            </Typography>
+          <Container className={classes.entryContainer}>
+            <Container>
+              <Typography
+                className={classes.title}
+                style={{ fontFamily: "Grape Nuts" }}
+                variant="h3"
+                color="beige"
+              >
+                {t("homePage.title")}
+                <span style={{ color: "#ffcc00" }}> Tunahan Kuzucu.</span>
+              </Typography>
+            </Container>
+            <Container>
+              <Typography
+                className={classes.title}
+                style={{ fontFamily: "Grape Nuts" }}
+                variant="h3"
+                color="beige"
+              >
+                {t("homePage.description.part1")}{" "}
+                <span style={{ color: "#ffcc00" }}>
+                  {t("homePage.description.part2")}{" "}
+                </span>
+                {t("homePage.description.part3")}
+              </Typography>
+            </Container>
           </Container>
         </motion.div>
+
+        {/* About Message Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
+          style={{ marginTop: "50px" }}
         >
           <Container className={classes.aboutContainer}>
             <Typography
@@ -126,18 +140,21 @@ const Home = () => {
             </Typography>
           </Container>
         </motion.div>
+
+        {/* Languages and Tools Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.5, duration: 0.5 }}
+          style={{ marginTop: "50px" }}
         >
-          <Container className={classes.languagesContainer}>
-            <Container style={{ textAlign: "center" }}>
+          <Container className={classes.langContainer}>
+            <Container className={classes.frontEndContainer}>
               <Typography
                 style={{ fontFamily: "Chilanka" }}
                 variant="h4"
                 color="beige"
-                className={classes.text}
+                className={classes.langText}
               >
                 {t("languagesMessage.part1")}
               </Typography>
@@ -146,16 +163,15 @@ const Home = () => {
                   src={frontEndImages[currentFrontEndImage]}
                   alt="javascript"
                   height="75px"
-                  className={classes.logo}
                 />
               </Typography>
             </Container>
-            <Container style={{ textAlign: "center" }}>
+            <Container className={classes.backEndContainer}>
               <Typography
                 style={{ fontFamily: "Chilanka" }}
                 variant="h4"
                 color="beige"
-                className={classes.text}
+                className={classes.langText}
               >
                 {t("languagesMessage.part2")}
               </Typography>
@@ -164,16 +180,15 @@ const Home = () => {
                   src={backEndImages[currentBackEndImage]}
                   alt="javascript"
                   height="75px"
-                  className={classes.logo}
                 />
               </Typography>
             </Container>
-            <Container style={{ textAlign: "center" }}>
+            <Container className={classes.toolsContainer}>
               <Typography
                 style={{ fontFamily: "Chilanka" }}
                 variant="h4"
                 color="beige"
-                className={classes.text}
+                className={classes.langText}
               >
                 {t("languagesMessage.part3")}
               </Typography>
@@ -182,33 +197,38 @@ const Home = () => {
                   src={toolImages[currentToolsImage]}
                   alt="javascript"
                   height="75px"
-                  className={classes.logo}
                 />
               </Typography>
             </Container>
           </Container>
         </motion.div>
+
+        {/* Skills and Competences Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.8, duration: 0.5 }}
-          style={{ marginBottom: "100px" }}
+          style={{ marginTop: "50px", marginBottom: "50px" }}
         >
           <Container className={classes.skillsContainer}>
-            <Grid item md={6} xs={12}>
-              <Container style={{ textAlign: "center" }}>
+            {/* Competences */}
+            <Container className={classes.competencesContainer}>
+              <Container className={classes.competenceTitle}>
                 <Typography
-                  style={{ fontFamily: "Chilanka" }}
+                  style={{ fontFamily: "Chilanka", color: "beige" }}
                   variant="h4"
                   color="beige"
-                  className={classes.text}
+                  className={classes.skillsTitle}
                 >
                   {t("skillsMessage.part1")}
                 </Typography>
-                <ul>
+              </Container>
+              <Container className={classes.competenceListContainer}>
+                <ul className={classes.competencesList}>
                   <li>
                     <Typography
                       style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      className={classes.skillsText}
                     >
                       {t("skillsMessage.competences.part1")}
                     </Typography>
@@ -216,6 +236,7 @@ const Home = () => {
                   <li>
                     <Typography
                       style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      className={classes.skillsText}
                     >
                       {t("skillsMessage.competences.part2")}
                     </Typography>
@@ -223,6 +244,7 @@ const Home = () => {
                   <li>
                     <Typography
                       style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      className={classes.skillsText}
                     >
                       {t("skillsMessage.competences.part3")}
                     </Typography>
@@ -230,28 +252,73 @@ const Home = () => {
                   <li>
                     <Typography
                       style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      className={classes.skillsText}
                     >
                       {t("skillsMessage.competences.part4")}
                     </Typography>
                   </li>
                 </ul>
               </Container>
-            </Grid>
-            <Grid item md={6} xs={12}>
-              <Container
-                className={classes.softSkillsContainer}
-                style={{
-                  textAlign: "center",
-                }}
-              >
+            </Container>
+
+            {/* Soft Skills */}
+            <Container className={classes.softSkillsContainer}>
+              <Container className={classes.softSkillsTitle}>
                 <Typography
                   style={{ fontFamily: "Chilanka" }}
                   variant="h4"
                   color="beige"
-                  className={classes.text}
+                  className={classes.skillsTitle}
                 >
                   {t("skillsMessage.part2")}
                 </Typography>
+              </Container>
+              <Container className={classes.softSkillsListContainer}>
+                <ul className={classes.softSkillsList}>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      className={classes.skillsText}
+                    >
+                      {t("skillsMessage.softSkills.part1")}
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      className={classes.skillsText}
+                    >
+                      {t("skillsMessage.softSkills.part2")}
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      className={classes.skillsText}
+                    >
+                      {t("skillsMessage.softSkills.part3")}
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                      className={classes.skillsText}
+                    >
+                      {t("skillsMessage.softSkills.part4")}
+                    </Typography>
+                  </li>
+                </ul>
+              </Container>
+            </Container>
+          </Container>
+        </motion.div>
+      </Container>
+
+      {/* 
+        
+                
+           
+              
                 <ul>
                   <li>
                     <Typography
@@ -286,7 +353,7 @@ const Home = () => {
             </Grid>
           </Container>
         </motion.div>
-      </Container>
+      </Container> */}
     </Grow>
   );
 };
