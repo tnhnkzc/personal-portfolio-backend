@@ -10,7 +10,7 @@ import github from "../../images/github.png";
 import gitbash from "../../images/gitbash.png";
 import html from "../../images/html.png";
 import css from "../../images/css.png";
-
+import expressjs from "../../images/expressjs.png";
 import mysql from "../../images/mysql.png";
 import adobexd from "../../images/adobexd.png";
 import WebFont from "webfontloader";
@@ -20,7 +20,7 @@ const Home = () => {
   const classes = useStyles();
 
   const frontEndImages = [javascript, html, react, css];
-  const backEndImages = [mysql, nodejs, mongodb];
+  const backEndImages = [mysql, nodejs, mongodb, expressjs];
   const toolImages = [github, adobexd, gitbash];
 
   const [currentFrontEndImage, setCurrentFrontEndImage] = useState(0);
@@ -195,101 +195,94 @@ const Home = () => {
           style={{ marginBottom: "100px" }}
         >
           <Container className={classes.skillsContainer}>
-            <Grid
-              columnSpacing={4}
-              rowSpacing={4}
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Grid item md={6} xs={12}>
-                <Container className={classes.comptencesContainer}>
-                  <Typography
-                    style={{ fontFamily: "Chilanka" }}
-                    variant="h4"
-                    color="beige"
-                    className={classes.text}
-                  >
-                    {t("skillsMessage.part1")}
-                  </Typography>
-                  <ul>
-                    <li style={{ listStyleType: "none" }}>
-                      <Typography
-                        style={{ color: "beige", fontFamily: "Droid Sans" }}
-                      >
-                        {t("skillsMessage.competences.part1")}
-                      </Typography>
-                    </li>
-                    <li style={{ listStyleType: "none" }}>
-                      <Typography
-                        style={{ color: "beige", fontFamily: "Droid Sans" }}
-                      >
-                        {t("skillsMessage.competences.part2")}
-                      </Typography>
-                    </li>
-                    <li style={{ listStyleType: "none" }}>
-                      <Typography
-                        style={{ color: "beige", fontFamily: "Droid Sans" }}
-                      >
-                        {t("skillsMessage.competences.part3")}
-                      </Typography>
-                    </li>
-                    <li style={{ listStyleType: "none" }}>
-                      <Typography
-                        style={{ color: "beige", fontFamily: "Droid Sans" }}
-                      >
-                        {t("skillsMessage.competences.part4")}
-                      </Typography>
-                    </li>
-                  </ul>
-                </Container>
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <Container
-                  className={classes.softSkillsContainer}
-                  style={{
-                    textAlign: "center",
-                  }}
+            <Grid item md={6} xs={12}>
+              <Container style={{ textAlign: "center" }}>
+                <Typography
+                  style={{ fontFamily: "Chilanka" }}
+                  variant="h4"
+                  color="beige"
+                  className={classes.text}
                 >
-                  <Typography
-                    style={{ fontFamily: "Chilanka" }}
-                    variant="h4"
-                    color="beige"
-                    className={classes.text}
-                  >
-                    {t("skillsMessage.part2")}
-                  </Typography>
-                  <ul>
-                    <li style={{ listStyleType: "none" }}>
-                      <Typography
-                        style={{ color: "beige", fontFamily: "Droid Sans" }}
-                      >
-                        {t("skillsMessage.softSkills.part1")}
-                      </Typography>
-                    </li>
-                    <li style={{ listStyleType: "none" }}>
-                      <Typography
-                        style={{ color: "beige", fontFamily: "Droid Sans" }}
-                      >
-                        {t("skillsMessage.softSkills.part2")}
-                      </Typography>
-                    </li>
-                    <li style={{ listStyleType: "none" }}>
-                      <Typography
-                        style={{ color: "beige", fontFamily: "Droid Sans" }}
-                      >
-                        {t("skillsMessage.softSkills.part3")}
-                      </Typography>
-                    </li>
-                    <li style={{ listStyleType: "none" }}>
-                      <Typography
-                        style={{ color: "beige", fontFamily: "Droid Sans" }}
-                      >
-                        {t("skillsMessage.softSkills.part4")}
-                      </Typography>
-                    </li>
-                  </ul>
-                </Container>
-              </Grid>
+                  {t("skillsMessage.part1")}
+                </Typography>
+                <ul>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                    >
+                      {t("skillsMessage.competences.part1")}
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                    >
+                      {t("skillsMessage.competences.part2")}
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                    >
+                      {t("skillsMessage.competences.part3")}
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                    >
+                      {t("skillsMessage.competences.part4")}
+                    </Typography>
+                  </li>
+                </ul>
+              </Container>
+            </Grid>
+            <Grid item md={6} xs={12}>
+              <Container
+                className={classes.softSkillsContainer}
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <Typography
+                  style={{ fontFamily: "Chilanka" }}
+                  variant="h4"
+                  color="beige"
+                  className={classes.text}
+                >
+                  {t("skillsMessage.part2")}
+                </Typography>
+                <ul>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                    >
+                      {t("skillsMessage.softSkills.part1")}
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                    >
+                      {t("skillsMessage.softSkills.part2")}
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                    >
+                      {t("skillsMessage.softSkills.part3")}
+                    </Typography>
+                  </li>
+                  <li>
+                    <Typography
+                      style={{ color: "beige", fontFamily: "Droid Sans" }}
+                    >
+                      {t("skillsMessage.softSkills.part4")}
+                    </Typography>
+                  </li>
+                </ul>
+              </Container>
             </Grid>
           </Container>
         </motion.div>

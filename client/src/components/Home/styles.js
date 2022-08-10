@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "100px",
+    marginTop: "150px",
     [theme.breakpoints.down("xs")]: {
       marginTop: "150px",
     },
@@ -40,10 +40,16 @@ export default makeStyles((theme) => ({
     },
   },
   skillsContainer: {
+    display: "flex !important",
+    flexDirection: "row ",
     marginTop: "150px",
     [theme.breakpoints.down("xs")]: {
-      marginTop: "100px",
-      marginBottom: "100px",
+      display: "flex !important",
+      flexDirection: "column ",
+    },
+    [theme.breakpoints.up("md")]: {
+      display: "flex !important",
+      flexDirection: "row ",
     },
   },
 
@@ -64,7 +70,7 @@ export default makeStyles((theme) => ({
   text: {
     color: "beige",
     textAlign: "center",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("xs")]: {
       fontSize: "24px !important",
     },
   },

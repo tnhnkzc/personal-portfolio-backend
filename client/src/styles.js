@@ -6,12 +6,4 @@ export default makeStyles((theme) => ({
       position: "absolute",
     },
   },
-  homeSection: {
-    height: "auto",
-  },
-  htmlContainer: {
-    [theme.breakpoints.down("xs")]: {
-      width: "auto !important",
-    },
-  },
 }));
