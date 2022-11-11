@@ -1,9 +1,0 @@
-/* /index.html 200
-/
-/auth
-/auth/signin
-/auth/signup
-/projects
-/contact
-/projects/createProject
-/projects/editProject/:id
